@@ -33,6 +33,6 @@ export const TESTIMONIES: Testimony[] = [
     companyUrl: 'https://adecapharmaceuticals.com',
     industry: 'Pharmaceutical',
     geography: 'Gujarat',
-    systemDeployed: 'Batch Manufacturing Record Automation',
+    systemDeployed: 'Regulatory Compliance Tracker',
   },
 ];
