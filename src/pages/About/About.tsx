@@ -12,6 +12,7 @@ const team = [
     bio: 'Daksh brings strong systems thinking and creativity to the AI systems MAD develops. Pursuing his B.Tech in Computer Science (AI-ML) from Adani University, he designs intelligent, scalable architectures that sit at the intersection of precision engineering and lateral thinking. For Daksh, every system is a question: what is the most intelligent thing this could do?',
     bgVar: 'var(--void)',
     glyph: 'ai',
+    linkedin: 'https://www.linkedin.com/in/daksh-r-chauhan',
   },
   {
     index: '02',
@@ -21,6 +22,7 @@ const team = [
     bio: 'Darpan leads the design of every client-facing solution MAD produces. With deep expertise across branding, UI/UX, and digital experience, he translates complex AI capabilities into interfaces that feel natural, inevitable, and elegant. He works with Adobe Creative Suite, CorelDRAW, and AI-powered visual tools — but his sharpest instrument is his instinct for what the user actually needs.',
     bgVar: 'var(--canvas)',
     glyph: 'design',
+    linkedin: '',
   },
   {
     index: '03',
@@ -30,6 +32,7 @@ const team = [
     bio: 'Urvi makes brands stop being forgettable. With a postgraduate degree in Social Entrepreneurship from the Entrepreneurship Development Institute of India, she ensures that MAD\'s solutions communicate their identity with precision. Bringing extensive experience from heading sales marketing to independent brand consulting, she makes sure that the systems we build don\'t just work flawlessly — they sound unique, stand out, and create an impact.',
     bgVar: 'var(--void)',
     glyph: 'brand',
+    linkedin: '',
   },
   {
     index: '04',
@@ -39,6 +42,7 @@ const team = [
     bio: 'Aryan builds the systems that make everything run. With a B.Tech in Information Technology from Aditya Silver Oak University of Engineering, he specialises in developing robust and efficient software that powers MAD\'s operational AI deployments. What makes Aryan exceptional is his multidimensional character — as a professional garba coach, he brings the same precision, rhythm, and reading of complex group dynamics to his code.',
     bgVar: 'var(--canvas)',
     glyph: 'engineering',
+    linkedin: '',
   },
   {
     index: '05',
@@ -48,6 +52,7 @@ const team = [
     bio: 'Mihir brings top-notch security to every system MAD deploys — ensuring what we build is fortified, auditable, and resilient. A Certified Ethical Hacker pursuing his MSc in Applied Cyber Security at Queen\'s University Belfast, he bridges the gap between robust software engineering and elite security practices. He doesn\'t just protect the perimeter — he architects systems where security is intrinsic, not bolted on.',
     bgVar: 'var(--void)',
     glyph: 'security',
+    linkedin: '',
   },
   {
     index: '06',
@@ -57,6 +62,7 @@ const team = [
     bio: 'Yash ensures that every system MAD delivers is robust and reliable. As a QA Analyst with a sharp eye for detail, he brings rigorous manual testing and quality assurance practices to the team. Drawing on his experience at Emerging Five, Yash thoroughly tests our solutions to identify and eliminate edge cases, guaranteeing that the final product not only meets requirements but exceeds expectations in stability.',
     bgVar: 'var(--canvas)',
     glyph: 'qa',
+    linkedin: '',
   },
 ];
 
@@ -347,6 +353,14 @@ const glyphMap: Record<string, React.ReactElement> = {
   qa: <QAGlyph />,
 };
 
+function LinkedInGlyph() {
+  return (
+    <svg className="about-chapter__linkedin-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+    </svg>
+  );
+}
+
 /* ─── Chapter Component ─── */
 interface ChapterProps {
   member: typeof team[0];
@@ -382,7 +396,31 @@ function TeamChapter({ member, isReversed }: ChapterProps) {
     >
       {/* Left Column — Text */}
       <div className="about-chapter__text">
-        <h2 className="about-chapter__name">{member.name}</h2>
+        <div className="about-chapter__name-row">
+          <h2 className="about-chapter__name">{member.name}</h2>
+          {member.linkedin ? (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-chapter__linkedin"
+              aria-label={`${member.name}'s LinkedIn Profile`}
+              title={`${member.name} on LinkedIn`}
+            >
+              <LinkedInGlyph />
+            </a>
+          ) : (
+            <a
+              href="#0"
+              className="about-chapter__linkedin about-chapter__linkedin--pending"
+              aria-label={`${member.name}'s LinkedIn Profile (Coming soon)`}
+              title={`${member.name} — LinkedIn profile coming soon`}
+              onClick={(e) => e.preventDefault()}
+            >
+              <LinkedInGlyph />
+            </a>
+          )}
+        </div>
         <p className="about-chapter__role">{member.role}</p>
         <div className="about-chapter__rule" />
         <p className="about-chapter__bio">{member.bio}</p>

@@ -169,6 +169,14 @@
   margin-bottom: 28px;
 }
 
+.about-chapter__name-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
 .about-chapter__name {
   font-family: var(--font-display, 'League Spartan', sans-serif);
   font-size: clamp(2.4rem, 5vw, 4.2rem);
@@ -176,7 +184,47 @@
   line-height: 1.0;
   letter-spacing: -0.025em;
   color: var(--text-primary);
-  margin-bottom: 12px;
+  margin-bottom: 0;
+}
+
+.about-chapter__linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  border: 1px solid var(--rule-mechanism, #242430);
+  background: rgba(242, 240, 236, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.about-chapter__linkedin:hover {
+  color: #0a66c2;
+  border-color: rgba(10, 102, 194, 0.6);
+  background: rgba(10, 102, 194, 0.1);
+  transform: translateY(-2px);
+}
+
+.about-chapter__linkedin--pending {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.about-chapter__linkedin--pending:hover {
+  color: var(--text-secondary);
+  border-color: var(--rule-mechanism, #242430);
+  background: rgba(242, 240, 236, 0.03);
+  transform: none;
+}
+
+.about-chapter__linkedin-svg {
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 
 .about-chapter__role {
