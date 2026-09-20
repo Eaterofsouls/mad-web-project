@@ -1,0 +1,73 @@
+/* MAD — Typography Token System */
+/* MASTER SOURCE: MAD_MASTER_CONSOLIDATION.md Part 2.3 */
+
+/* PLACEHOLDER: Replace with licensed Söhne from Klim Type Foundry before production */
+/* Klim Type Foundry: https://klim.co.nz/retail-fonts/sohne/ */
+/* Required weights: 300 (with italic), 400, 500, 600, 700, 900 */
+/* Also required: Söhne Mono (for metadata leader dots only) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;900&display=swap');
+
+:root {
+  /* PLACEHOLDER: Replace with licensed Söhne before production */
+  --font-primary:     'Inter', system-ui, -apple-system, sans-serif;
+  --font-sohne:       'Inter', system-ui, -apple-system, sans-serif; /* Alias so MethodSection/PledgeSection resolve */
+  --font-mono:        'Courier New', 'Lucida Console', monospace;
+  --font-sohne-mono:  'Courier New', 'Lucida Console', monospace;   /* Alias for mono components */
+  --font-display:     'League Spartan', 'Inter', sans-serif;
+
+  /* ─── TYPE SCALE ─── */
+  --text-hero:          118px;  /* Gallery hero words */
+  --text-scramble-1:    64px;   /* Signal title single-line (≤28 chars) */
+  --text-scramble-2:    52px;   /* Signal title two-line (>28 chars) */
+  --text-reality:       28px;   /* Reality sentence */
+  --text-conversion:    24px;   /* CTA headline */
+  --text-outcomes:      22px;   /* Outcomes */
+  --text-subheadline:   21px;   /* Gallery sub-headline */
+  --text-body:          16px;   /* Body prose in Signal */
+  --text-mechanism:     13px;   /* Mechanism columns / CLOSE FILE */
+  --text-proof:         13px;   /* Proof entries */
+  --text-cluster-name:  13px;   /* Cluster hover name */
+  --text-metadata:      11px;   /* Metadata labels / Nav links */
+  --text-cluster-sub:   11px;   /* Cluster hover subtitle */
+  --text-label:         10px;   /* Section labels / orientation */
+  --text-node-hover:    10px;   /* Node hover labels */
+  --text-cta-btn:       12px;   /* CTA button */
+
+  /* ─── LINE HEIGHTS ─── */
+  --lh-hero:       0.96;
+  --lh-reality:    1.55;
+  --lh-body:       1.82;
+  --lh-mechanism:  1.9;
+  --lh-proof:      2.1;
+  --lh-outcomes:   1.6;
+
+  /* ─── LETTER SPACING ─── */
+  --ls-hero:       -0.025em;
+  --ls-scramble:    0.04em;
+  --ls-nav:         0.12em;
+  --ls-label:       0.12em;
+  --ls-label-sm:    0.10em;
+  --ls-cta:         0.14em;
+  --ls-meta:        0.12em;
+  --ls-cluster:     0.10em;
+  --ls-counter:     0.14em;
+  --ls-gallery-meta:0.14em;
+  --ls-wordmark:    0.08em;
+  --ls-loading:     0.16em;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-hero:        clamp(44px, 12vw, 72px);
+    --text-scramble-1:  clamp(26px, 7.5vw, 40px);
+    --text-scramble-2:  clamp(22px, 6.5vw, 32px);
+    --text-reality:     clamp(18px, 4.5vw, 24px);
+    --text-conversion:  clamp(16px, 4vw, 20px);
+    --text-outcomes:    clamp(15px, 3.5vw, 18px);
+    --text-body:        15px;
+    --text-mechanism:   13px;
+    --text-proof:       12px;
+  }
+}

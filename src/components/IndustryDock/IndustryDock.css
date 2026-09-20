@@ -1,0 +1,97 @@
+.industry-dock-container {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.industry-dock {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  background: rgba(30, 30, 35, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dock-btn {
+  background: transparent;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
+  font-family: var(--font-primary);
+  outline: none;
+  text-decoration: none;
+}
+
+.dock-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 250ms ease;
+}
+
+.dock-btn:hover:not(.active) .dock-name {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dock-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Active State: The Apple Pill ── */
+.dock-btn.active {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dock-btn.active .dock-name {
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .industry-dock-container {
+    bottom: 24px;
+    width: 92%;
+  }
+  .industry-dock {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+/* ── PHASE 12: iOS SAFE AREA & SMOOTH SCROLL ────────────────────────────── */
+@media (max-width: 768px) {
+  .industry-dock-container {
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    width: 92%;
+  }
+
+  .industry-dock {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}

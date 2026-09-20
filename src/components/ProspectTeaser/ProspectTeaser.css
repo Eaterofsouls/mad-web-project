@@ -1,0 +1,529 @@
+/* ─── SECTION ────────────────────────────────────────────────────────────── */
+.workflow-teaser {
+  /* Light diagram zone — warm white surface, dark ink typography */
+  --pt-diagram-bg:         #faf9f7;
+  --pt-node-bg:            #ffffff;
+  --pt-node-border:        rgba(15,15,13,0.08);
+  --pt-node-border-hover:  rgba(15,15,13,0.20);
+  --pt-node-hover-bg:      #f4f2ee;
+  --pt-node-text:          #0f0f0d;
+  --pt-node-text-muted:    rgba(15,15,13,0.55);
+  --pt-node-text-faint:    rgba(15,15,13,0.38);
+
+  --pt-line:               rgba(15,15,13,0.10);
+  --pt-dash:               rgba(15,15,13,0.50);
+  /* Accent: dark ink at 58% — for REACH label, branch fork lines */
+  --pt-accent:             rgba(15,15,13,0.58);
+  --pt-accent-line:        rgba(15,15,13,0.10);
+
+  position: relative;
+  width: 100%;
+  padding: 0 0 80px;
+  background-color: transparent;
+  color: var(--pt-node-text);
+  font-family: var(--font-primary);
+}
+
+/* ─── CANVAS VISIBILITY CONTROL ──────────────────────────────────────────── */
+/* Desktop canvas: shown on wide screens, hidden on mobile */
+.wf-canvas--desktop {
+  display: block;
+}
+.wf-canvas--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .wf-canvas--desktop {
+    display: none;
+  }
+  .wf-canvas--mobile {
+    display: block;
+  }
+}
+
+/* ─── DESKTOP CANVAS — white surface, hairline separator ───────────────── */
+.wf-canvas--desktop {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 48px var(--page-padding-x, 6vw) 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--pt-diagram-bg);
+  border-top: 1px solid rgba(15,15,13,0.06);
+  border-bottom: 1px solid rgba(15,15,13,0.06);
+}
+
+/* ─── DESKTOP MAIN RAIL ────────────────────────────────────────────────────── */
+.wf-rail {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: max-content;
+  padding-bottom: 40px;
+}
+
+/* ─── MOBILE CANVAS — white surface, hairline separator ────────────────── */
+.wf-canvas--mobile {
+  background: var(--pt-diagram-bg);
+  border-top: 1px solid rgba(15,15,13,0.06);
+  border-bottom: 1px solid rgba(15,15,13,0.06);
+  padding: 36px var(--page-padding-x, 5vw) 40px;
+}
+
+/* ─── MOBILE VERTICAL RAIL ───────────────────────────────────────────────── */
+.wf-rail-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+
+/* ─── NODE CARD ──────────────────────────────────────────────────────────── */
+.wf-node {
+  position: relative;
+  width: 148px;
+  background: var(--pt-node-bg);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  border: 1px solid var(--pt-node-border);
+  border-radius: 10px;
+  padding: 16px 14px 14px;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+/* Mobile: full width, bigger padding and text */
+@media (max-width: 768px) {
+  .wf-node {
+    width: 100%;
+    padding: 20px 18px 18px;
+    flex-shrink: 1;
+    border-radius: 10px;
+  }
+
+  .wf-node-mini {
+    width: 100% !important;
+    padding: 16px 18px !important;
+  }
+}
+
+.wf-node::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--node-color, rgba(15,15,13,0.20));
+  border-radius: 10px 10px 0 0;
+  opacity: 0.7;
+}
+
+.wf-node:hover {
+  background: var(--pt-node-hover-bg);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  border-color: var(--pt-node-border-hover);
+}
+
+/* The AI-brain node — visual peak: warm off-white lift with a deeper shadow */
+.wf-node.is-highlight {
+  background: #f0ede8;
+  border-color: rgba(15,15,13,0.14);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09), 0 1px 0 rgba(15,15,13,0.04);
+}
+.wf-node.is-highlight:hover {
+  background: #e9e6e0;
+  border-color: rgba(15,15,13,0.22);
+  box-shadow: 0 6px 32px rgba(0,0,0,0.12), 0 1px 0 rgba(15,15,13,0.06);
+}
+
+.wf-node-mini {
+  width: 130px;
+  padding: 12px;
+}
+
+.wf-node-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.wf-node-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile: bigger icons */
+@media (max-width: 768px) {
+  .wf-node-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.node-icon-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.wf-node-label {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--pt-node-text);
+}
+
+/* Mobile: bigger label */
+@media (max-width: 768px) {
+  .wf-node-label {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+}
+
+.wf-node-headline {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  color: var(--pt-node-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Mobile: bigger headline */
+@media (max-width: 768px) {
+  .wf-node-headline {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+.wf-node-sell {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  color: var(--pt-node-text-faint);
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .wf-node-sell {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+/* ─── FLOW CONNECTOR (horizontal) ────────────────────────────────────────── */
+.flow-connector {
+  position: relative;
+  width: 40px;
+  height: 2px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.flow-track {
+  position: absolute;
+  inset: 0;
+  background: var(--pt-line);
+  border-radius: 1px;
+}
+
+.flow-dash {
+  position: absolute;
+  top: 0; left: -20px;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pt-dash), transparent);
+  border-radius: 1px;
+  animation: dashFlow 1.8s linear infinite;
+}
+
+.flow-reverse .flow-dash {
+  animation-direction: reverse;
+}
+
+@keyframes dashFlow {
+  0%   { transform: translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(60px); opacity: 0; }
+}
+
+.flow-arrowhead {
+  position: absolute;
+  right: -4px;
+  font-size: 9px;
+  color: rgba(15,15,13,0.30);
+  line-height: 1;
+}
+
+/* Vertical connector variant */
+.flow-vertical {
+  width: 2px;
+  height: 32px;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 auto;
+}
+
+/* Mobile vertical connector — taller */
+@media (max-width: 768px) {
+  .flow-vertical {
+    height: 36px;
+  }
+}
+
+.flow-vertical .flow-track {
+  inset: 0;
+}
+
+.flow-vertical .flow-dash {
+  top: -10px; left: 0;
+  width: 2px;
+  height: 10px;
+  background: linear-gradient(180deg, transparent, var(--pt-dash), transparent);
+  animation: dashFlowV 1.8s linear infinite;
+}
+
+.flow-vertical .flow-arrowhead {
+  right: auto;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes dashFlowV {
+  0%   { transform: translateY(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(44px); opacity: 0; }
+}
+
+/* ─── BRANCH BLOCK (desktop horizontal) ─────────────────────────────────── */
+.wf-branch-block {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.branch-header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 10px 0;
+}
+
+.branch-label-tag {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--pt-accent);
+}
+
+.branch-headline {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  color: var(--pt-node-text-faint);
+  margin: 4px 0 0;
+  font-weight: 400;
+}
+
+.branch-fork {
+  display: flex;
+  align-items: center;
+}
+
+.branch-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.branch-channel-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.branch-fork-line {
+  width: 24px;
+  height: 1px;
+  background: var(--pt-accent-line);
+  position: relative;
+}
+
+.branch-fork-line::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0;
+  width: 8px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--pt-accent));
+  animation: dashFlow 2s linear infinite;
+}
+
+.branch-merge-line {
+  width: 24px;
+  height: 1px;
+  background: var(--pt-accent-line);
+}
+
+/* ─── BRANCH BLOCK (mobile vertical) ────────────────────────────────────── */
+.wf-branch-block-vertical {
+  width: 100%;
+  border: 1px solid var(--pt-accent-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.branch-header-vertical {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--pt-accent-line);
+  background: rgba(15,15,13,0.03);
+}
+
+.branch-header-vertical .branch-label-tag {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.branch-header-vertical .branch-headline {
+  font-size: 13px;
+  margin: 0;
+}
+
+.branch-channels-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.branch-channels-vertical .wf-node-mini {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(15,15,13,0.06);
+  box-shadow: none;
+  background: rgba(15,15,13,0.02);
+}
+
+.branch-channels-vertical .wf-node-mini:last-child {
+  border-bottom: none;
+}
+
+.branch-channels-vertical .wf-node-mini::before {
+  display: none;
+}
+
+/* ─── LOOP-BACK ARC (desktop) ────────────────────────────────────────────── */
+.wf-loopback {
+  position: relative;
+  height: 48px;
+  width: 100%;
+}
+
+.loopback-line {
+  position: absolute;
+  bottom: 0;
+  left: 74px;
+  right: 74px;
+  height: 1px;
+  background: var(--pt-line);
+  border-radius: 1px;
+}
+
+.loopback-dash {
+  position: absolute;
+  bottom: -1px;
+  left: 74px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--pt-dash), transparent);
+  animation: loopReturn 4s linear infinite;
+}
+
+@keyframes loopReturn {
+  0%   { transform: translateX(0); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateX(calc(100vw - 148px)); opacity: 0; }
+}
+
+.wf-loopback::before,
+.wf-loopback::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 1px;
+  height: 48px;
+  background: var(--pt-line);
+}
+.wf-loopback::before { left: 74px; }
+.wf-loopback::after  { right: 74px; }
+
+.loopback-label {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-primary);
+  font-size: 11px;
+  color: rgba(15,15,13,0.28);
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+/* ─── LOOP-BACK (mobile) ─────────────────────────────────────────────────── */
+.wf-loopback-mobile {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--pt-line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.loopback-line-mobile {
+  width: 32px;
+  height: 1px;
+  background: var(--pt-line);
+  flex-shrink: 0;
+}
+
+.loopback-label-mobile {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  color: rgba(15,15,13,0.28);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── HEADER MOBILE ──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .workflow-teaser {
+    padding: 0 0 60px;
+  }
+}
+
+/* ─── REDUCED MOTION ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .flow-dash,
+  .loopback-dash,
+  .branch-fork-line::after {
+    animation: none !important;
+  }
+}

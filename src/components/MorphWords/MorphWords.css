@@ -1,0 +1,165 @@
+/* ─── DESKTOP: Scroll-morph overlay ──────────────────────────────────────── */
+.morph-words-container {
+  /* Relative block — pushes document layout naturally */
+  position: relative;
+  width: 100%;
+  background: transparent;
+  z-index: 50;
+  /* Pull up over the 30vh HeroShrink spacer AND 10vh into the Hero section (total 40vh) */
+  margin-top: -40vh;
+  pointer-events: none; /* Let clicks pass through to Hero section */
+  --morph-progress: 0;
+}
+
+.morph-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 var(--page-padding-x, 6vw);
+}
+
+.morph-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.morph-sticky-zone {
+  /* Acts as the scroll spacer for the morph animation */
+  height: 250vh;
+}
+
+.morph-text {
+  position: sticky;
+  top: 35vh; /* Stick higher on the screen so it sits a bit above center */
+  display: block;
+  
+  --start-size: clamp(11px, 1.3vw, 17px);
+  --end-size: clamp(32px, 5vw, 56px);
+  font-size: calc(var(--start-size) * (1 - var(--morph-progress)) + var(--end-size) * var(--morph-progress));
+  
+  font-weight: calc(600 * (1 - var(--morph-progress)) + 700 * var(--morph-progress));
+  letter-spacing: calc(0.14em * (1 - var(--morph-progress)) + -0.03em * var(--morph-progress));
+  line-height: calc(1 * (1 - var(--morph-progress)) + 0.95 * var(--morph-progress));
+  
+  color: color-mix(
+    in srgb, 
+    var(--light-primary, #0f0f0d) calc(var(--morph-progress) * 100%), 
+    rgba(242, 240, 236, 0.72)
+  );
+  
+  font-family: var(--font-sohne, 'Helvetica Neue', sans-serif);
+  white-space: nowrap;
+}
+
+.morph-wr-box {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Push the paragraph to the bottom */
+  padding: 0 40px 32px 0; /* Padding for bottom text */
+  /* Negative margin pulls the box UP so it perfectly wraps the text when it unsticks! */
+  margin-top: -88px; /* The border will extend exactly 32px above the text */
+  position: relative;
+  pointer-events: auto; /* Restore interactivity */
+}
+
+.morph-col:not(:last-child) .morph-wr-box {
+  border-right: 1px solid rgba(15,15,13,0.15);
+}
+
+.morph-col:not(:first-child) .morph-wr-box {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.morph-col:last-child .morph-wr-box {
+  padding-right: 0;
+}
+
+.morph-wr-body {
+  font-family: var(--font-sohne, 'Helvetica Neue', sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(15,15,13,0.55);
+  margin: 0;
+  max-width: 300px;
+  opacity: 1;
+}
+
+/* Horizontal Interpolation */
+.morph-col-0 .morph-text {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.morph-col-1 .morph-text {
+  /* Center in column during scramble, left-align (with 0 offset here) at end */
+  left: calc( 50% * (1 - var(--morph-progress)) );
+  /* Move from -50% (centered) to 40px (padding) */
+  transform: translate(
+    calc( -50% * (1 - var(--morph-progress)) + 40px * var(--morph-progress) ),
+    -50%
+  );
+}
+
+.morph-col-2 .morph-text {
+  /* Right-align in column during scramble, left-align (with 0 offset here) at end */
+  left: calc( 100% * (1 - var(--morph-progress)) );
+  /* Move from -100% (right-aligned) to 40px (padding) */
+  transform: translate(
+    calc( -100% * (1 - var(--morph-progress)) + 40px * var(--morph-progress) ),
+    -50%
+  );
+}
+
+/* Desktop only */
+
+/* ─── MOBILE: Stacked scroll-reveal section ───────────────────────────────── */
+.morph-mobile-section {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  gap: 0;
+  padding: 60px var(--page-padding-x, 5vw) 72px;
+  background: var(--gallery, #faf9f7);
+}
+
+@media (max-width: 768px) {
+  .morph-mobile-section {
+    display: flex;
+  }
+}
+
+.morph-mobile-word {
+  font-family: var(--font-primary);
+  font-size: clamp(38px, 12vw, 84px); /* Shrunk to prevent "COMPOUND." from overflowing */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  color: var(--light-primary, #0f0f0d);
+  text-transform: uppercase;
+
+  /* Start hidden, slide up on reveal */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.morph-mobile-word.mwm-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle divider between words */
+.morph-mobile-word:not(:last-child) {
+  border-bottom: 1px solid rgba(15, 15, 13, 0.08);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .morph-mobile-word {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

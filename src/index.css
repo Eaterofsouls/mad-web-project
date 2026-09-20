@@ -1,0 +1,140 @@
+/* MAD — Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+*:focus-visible {
+  outline: 1px solid var(--text-primary, #f2f0ec);
+  outline-offset: 4px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--void);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  /* Momentum scroll on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile scroll smoothness */
+@media (max-width: 768px) {
+  html {
+    /* Prevent vertical overscroll bounce interfering with page scroll */
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    /* Smooth momentum scrolling on iOS/Android */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.home-page {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--light-primary, #0f0f0d);
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  z-index: 10000;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── CUSTOM SCROLLBARS (Global) ──────────────────────────────────────────── */
+
+/* WebKit (Chrome, Edge, Safari) — main window scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Hide scrollbars on mobile for a cleaner touch experience */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(242, 240, 236, 0.12);
+  border-radius: 99px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(242, 240, 236, 0.28);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(242, 240, 236, 0.12) transparent;
+}
+
+@media (max-width: 768px) {
+  * {
+    scrollbar-width: none;
+  }
+}
+
+/* Horizontal scroll containers (e.g. workflow canvas, constellation) — 
+   inherit the same thin styling, just applied to x-axis */
+.wf-canvas,
+.orbital-canvas-wrap,
+.blueprint-canvas-wrap,
+.callout-track {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(242, 240, 236, 0.1) transparent;
+}
+
+
+/* ── GLOBAL REDUCED MOTION ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

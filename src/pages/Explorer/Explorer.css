@@ -1,0 +1,56 @@
+/* Explorer Page */
+/*
+  Z-INDEX STACK - DO NOT MODIFY ORDER
+  ↓
+  StarField canvas:     z-index: 0
+  SVG constellation:    z-index: 1
+  Canvas scrim:         z-index: 90
+  Tooltip card:         z-index: 120
+  Chrome (legends etc): z-index: 110
+  Surface2 banner:      z-index: 130
+  Signal panel:         z-index: 200
+  Nav bar:              z-index: 300
+*/
+.explorer-page {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--canvas);
+}
+
+.explorer-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes surface2-rise {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.explorer-scrim {
+  position: fixed;
+  inset: 0;
+  background: var(--canvas-scrim);
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.explorer-scrim.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .node-tooltip-card { transition: opacity 100ms ease !important; }
+  .explorer-scrim { transition: none !important; }
+}

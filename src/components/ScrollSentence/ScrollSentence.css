@@ -1,0 +1,57 @@
+.scroll-sentence-container {
+  position: relative;
+  height: 700vh; /* Slow, cinematic reveal */
+  width: 100%;
+}
+
+/* Mobile: generous scroll height so words linger */
+@media (max-width: 768px) {
+  .scroll-sentence-container {
+    height: 550vh;
+  }
+}
+
+.scroll-sentence-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh; /* use svh on mobile to account for browser chrome */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 var(--page-padding-x, 5vw);
+}
+
+.scroll-sentence-words {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* GPU layer on the words container, not the sticky parent */
+  will-change: contents;
+}
+
+
+.scroll-sentence-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display, 'League Spartan', sans-serif);
+  font-size: clamp(48px, 15vw, 200px);
+  font-weight: 900;
+  line-height: 1.0;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.04em;
+  will-change: opacity, transform;
+  /* Remove css transition since opacity/transform is driven frame-by-frame by React */
+}
+
+/* Adjust for mobile to prevent overflow */
+@media (max-width: 768px) {
+  .scroll-sentence-word {
+    font-size: clamp(32px, 10vw, 64px);
+    letter-spacing: -0.03em;
+  }
+}

@@ -1,0 +1,594 @@
+/* Node Page — dark theme for individual system pages */
+.node-page {
+  min-height: 100vh;
+  background: var(--canvas);
+  padding-top: var(--nav-height);
+}
+
+
+
+.node-back {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: var(--text-metadata);
+  font-weight: 500;
+  letter-spacing: var(--ls-nav);
+  color: var(--text-tertiary);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  transition: color 0.2s ease;
+}
+
+.node-back:hover {
+  color: var(--text-secondary);
+}
+
+.node-orientation {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.node-cluster {
+  font-family: var(--font-primary);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  color: var(--text-structural);
+  text-transform: uppercase;
+}
+
+.node-sep {
+  width: 1px;
+  height: 12px;
+  background: var(--rule-heavy);
+}
+
+.node-id {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--text-structural);
+  letter-spacing: 0.12em;
+}
+
+.node-title {
+  font-family: var(--font-primary);
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 700;
+  letter-spacing: var(--ls-scramble);
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+/* Metadata */
+
+
+
+
+
+
+
+
+
+
+/* Reality */
+
+
+
+
+/* Body sections */
+
+
+
+
+.node-section-label {
+  font-family: var(--font-primary);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  color: var(--text-structural);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.node-proof-entry:first-child {
+  border-top: 1px solid var(--rule-heavy);
+}
+
+
+
+
+
+
+
+.node-mechanism-col:first-child { padding-right: 24px; }
+.node-mechanism-col:last-child  { padding-left: 24px; }
+
+
+
+
+
+
+
+
+
+
+
+/* CTA */
+
+
+
+
+.node-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--cta-btn-width);
+  height: var(--cta-btn-height);
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  font-family: var(--font-primary);
+  font-size: var(--text-cta-btn);
+  font-weight: 600;
+  letter-spacing: var(--ls-cta);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;  /* PROTECTED */
+  transition: background 0.2s ease;
+}
+
+.node-cta-btn:hover {
+  background: var(--cta-hover);
+}
+
+/* Not found state */
+.node-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - var(--nav-height));
+  gap: 24px;
+}
+
+
+
+.node-nf-back {
+  font-family: var(--font-primary);
+  font-size: var(--text-metadata);
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  
+
+  
+
+  .node-mechanism-col:first-child { padding-right: 0; }
+  .node-mechanism-col:last-child  { padding-left: 0; }
+}
+
+/* PAGE LOAD TRANSITION OVERLAY
+   Starts at white, fades to transparent-black over --detail-transition-duration.
+   Uses token variables only - no hardcoded durations or easings.         */
+
+.node-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+  background: var(--detail-bg-start);
+  opacity: 1;
+  animation: nodeTransitionFade var(--detail-transition-duration) var(--ease-out-expo) forwards;
+}
+
+@keyframes nodeTransitionFade {
+  0%   { background: var(--detail-bg-start); opacity: 1; }
+  60%  { background: var(--detail-bg-end);   opacity: 0.6; }
+  100% { background: var(--detail-bg-end);   opacity: 0; }
+}
+
+.node-transition-overlay.done {
+  display: none;
+}
+
+/* PAGE CONTENT REVEAL
+   Content fades in from 600ms into the transition.                      */
+
+.node-content-reveal {
+  opacity: 0;
+  animation: nodeContentReveal var(--detail-transition-duration) var(--ease-out-expo) 600ms forwards;
+}
+
+@keyframes nodeContentReveal {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* PROMPT 08 - Full-page layout shell */
+
+.node-full-layout {
+  min-height: 100vh;
+  background: var(--void);
+  padding-top: calc(var(--nav-height) + var(--page-padding-y));
+  padding-left: var(--page-padding-x);
+  padding-right: var(--page-padding-x);
+  padding-bottom: var(--section-gap);
+}
+
+/* SECTION 1 - Workflow visual */
+.node-section-workflow {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--section-gap);
+}
+
+/* Constrained content column (Sections 2-5) */
+.node-detail-column {
+  max-width: var(--detail-content-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+/* SECTION 2 - Title */
+.node-section-title {
+  text-align: center;
+}
+
+.node-title-large {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin: 16px 0 32px;
+}
+
+.node-title-rule {
+  border: none;
+  border-top: 1px solid var(--text-structural);
+  opacity: 0.4;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* SECTION 3 - Layman summary */
+.node-section-summary {
+  text-align: center;
+}
+
+.node-summary-text {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  max-width: var(--detail-content-max-width);
+  margin: 0 auto;
+}
+
+/* SECTION 4 - Detailed explanation */
+.node-section-explanation {
+  text-align: left;
+}
+
+.node-explanation-text {
+  margin-top: 16px;
+}
+
+.node-explanation-text p {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+/* SECTION 5 - Proof citation placeholder */
+.node-section-proof-placeholder {
+  min-height: 48px;
+  border-top: 1px solid var(--rule-heavy);
+  opacity: 0.3;
+}
+
+/* Page footer (back link + CTA) */
+.node-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  border-top: 1px solid var(--rule-heavy);
+}
+
+@media (max-width: 768px) {
+  .node-section-workflow { min-height: 40vh; }
+  .node-title-large { font-size: 1.6rem; }
+  .node-page-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+/* PROMPT 09 - Scramble labels */
+.node-header-labels {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.node-header-label-container {
+  position: relative;
+  font-family: var(--font-primary);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.node-header-label-hidden {
+  visibility: hidden;
+}
+
+.node-header-label-visible {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--text-structural);
+  opacity: 0.6;
+  transition: color 0.1s ease, opacity 0.1s ease;
+}
+
+.node-header-label-visible.flash {
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+/* PROMPT 10 - Ghost Watermark */
+.node-watermark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: var(--detail-watermark-opacity, 0.035);
+  pointer-events: none;
+  color: var(--text-structural);
+}
+
+.node-content-reveal {
+  position: relative;
+  z-index: 1;
+}
+
+/* PROMPT 11 - Proof Citation Section */
+.node-section-proof {
+  margin-top: 40px;
+}
+
+.proof-pending-flag {
+  font-family: var(--font-primary);
+  font-size: 8px;
+  color: #C8923A;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.proof-card {
+  border: 1px solid rgba(242,238,228,0.2);
+  padding: 2rem;
+  max-width: var(--detail-content-max-width);
+}
+
+.proof-card.is-placeholder {
+  border-top: 2px solid rgba(200,146,58,0.4);
+}
+
+.proof-company {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.proof-system {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.proof-date {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: var(--text-metadata);
+  margin-bottom: 16px;
+}
+
+.proof-result {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.proof-source {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  color: var(--text-metadata);
+}
+
+.proof-source a {
+  color: var(--text-metadata);
+  text-decoration: underline;
+  text-decoration-color: rgba(242,238,228,0.3);
+  text-underline-offset: 4px;
+}
+
+.proof-source a:hover {
+  color: var(--text-secondary);
+}
+
+.proof-fallback-text {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+/* PROMPT 12 - Scroll Cue */
+.node-scroll-cue-wrapper {
+  height: 52px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.node-scroll-cue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(242,238,228,0.3);
+  opacity: 0;
+  transition: opacity 400ms ease-out;
+  pointer-events: none;
+}
+
+.node-scroll-cue.visible {
+  opacity: 1;
+  animation: nodeScrollPulse 3s ease-in-out infinite;
+}
+
+.node-scroll-cue.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-out, visibility 0s linear 300ms;
+}
+
+.node-scroll-cue-text {
+  font-family: var(--font-primary);
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: rgba(242,238,228,0.4);
+  line-height: 1.4;
+}
+
+@keyframes nodeScrollPulse {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 100ms !important;
+  }
+  .node-transition-overlay {
+    transition-duration: 50ms !important;
+  }
+}
+
+/* ── PHASE 9: MOBILE NODE PAGE ──────────────────────────────────────────── */
+.node-title {
+  font-size: clamp(24px, 7vw, 56px);
+}
+
+@media (max-width: 768px) {
+  .node-back {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .node-detail-column {
+    padding: 0 var(--page-padding-x, 5vw);
+  }
+
+  .node-title-large {
+    font-size: clamp(22px, 7vw, 44px);
+    letter-spacing: 0.04em;
+  }
+
+  .node-header-labels {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 20px var(--page-padding-x, 5vw);
+  }
+
+  .node-summary-text {
+    font-size: clamp(18px, 4.5vw, 24px);
+    line-height: 1.5;
+  }
+
+  .node-explanation-text p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .metadata-row {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .mechanism-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanism-divider-vertical {
+    display: none;
+  }
+
+  .proof-card {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .node-cta-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .node-page-footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+

@@ -1,0 +1,1 @@
+export { HeroShrink } from './HeroShrink';

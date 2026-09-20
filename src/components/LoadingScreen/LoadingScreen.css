@@ -1,0 +1,25 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--void);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: opacity 500ms ease;
+  opacity: 1;
+}
+
+.loading-screen.fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scramble-word {
+  font-size: clamp(14px, 2vw, 22px);
+  letter-spacing: 0.3em;
+  font-weight: 400;
+  color: var(--text-primary, #f2f0ec);
+  text-transform: uppercase;
+}

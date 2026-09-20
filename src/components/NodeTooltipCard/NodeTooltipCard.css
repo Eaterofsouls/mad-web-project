@@ -1,0 +1,117 @@
+.node-tooltip-card {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  width: var(--tooltip-width);       /* 320px */
+  z-index: 120;
+  background: var(--tooltip-bg);     /* rgba(10,10,13,0.97) */
+  border: 1px solid var(--tooltip-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.node-tooltip-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ntc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ntc-cluster {
+  font-family: var(--font-primary);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--chrome-text);
+  text-transform: uppercase;
+}
+
+.ntc-sep {
+  width: 1px;
+  height: 10px;
+  background: var(--tooltip-border);
+  flex-shrink: 0;
+}
+
+.ntc-id {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--chrome-text);
+  text-transform: uppercase;
+}
+
+.ntc-name {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.ntc-rule {
+  height: 1px;
+  background: var(--tooltip-border);
+  width: 100%;
+}
+
+.ntc-summary {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.ntc-industries {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.ntc-meta-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: var(--chrome-text);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.ntc-meta-value {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--chrome-text-strong);
+}
+
+.ntc-footer {
+  padding-top: 4px;
+}
+
+.ntc-cta {
+  font-family: var(--font-primary);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--chrome-text);
+  text-transform: uppercase;
+}
+
+/* Mobile: hide tooltip card — Index view is used instead */
+@media (max-width: 768px) {
+  .node-tooltip-card { display: none; }
+}

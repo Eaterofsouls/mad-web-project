@@ -1,0 +1,140 @@
+/* ProspectPhaseLoop — Orbit ring animation component */
+
+.prospect-phase-loop {
+  width: 100%;
+  max-width: 640px;
+  height: 640px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.phase-loop-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Background Ring */
+.phase-base-ring {
+  stroke: rgba(242, 238, 228, 0.15); /* var(--text-structural) ~15% */
+  stroke-width: 1px;
+  fill: none;
+}
+
+/* Active Accumulated Ring */
+.phase-active-ring {
+  stroke: rgba(242, 238, 228, 0.5); /* var(--text-primary, #f2f0ec) ~50% */
+  stroke-width: 1px;
+  fill: none;
+  transition: stroke-dashoffset 400ms ease;
+}
+
+/* Node Points */
+.phase-node {
+  stroke: rgba(242, 238, 228, 0.4); /* var(--text-structural) ~40% */
+  stroke-width: 1px;
+  fill: transparent;
+  transition: fill 300ms ease, stroke 300ms ease;
+}
+
+.phase-node.active {
+  fill: rgba(242, 238, 228, 0.8); /* var(--text-primary, #f2f0ec) ~80% */
+  stroke: rgba(242, 238, 228, 0.8);
+}
+
+/* Radial Labels */
+.phase-label {
+  font-family: var(--font-primary);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  fill: rgba(242, 238, 228, 0.3);
+  transition: fill 300ms ease;
+}
+
+.phase-label.active {
+  fill: rgba(242, 238, 228, 0.8);
+}
+
+/* Central Hub */
+.phase-central-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hub-phase-number {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  color: rgba(242, 238, 228, 0.6); /* var(--text-structural) */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.hub-phase-title {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--text-primary, #f2f0ec);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hub-phase-description {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  color: var(--text-secondary, rgba(242, 240, 236, 0.55));
+  line-height: 1.4;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .prospect-phase-loop {
+    height: 320px;
+  }
+  .phase-label {
+    display: none;
+  }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 100ms !important;
+  }
+  .phase-active-ring {
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
+}
+
+/* ── PHASE 8: HUB MOBILE SIZING ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .phase-central-hub {
+    width: 130px;
+    height: 130px;
+  }
+
+  .hub-phase-title {
+    font-size: 0.85rem;
+  }
+
+  .hub-phase-description {
+    font-size: 0.72rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

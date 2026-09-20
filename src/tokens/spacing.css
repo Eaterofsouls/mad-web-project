@@ -1,0 +1,90 @@
+/* MAD — Spacing Token System */
+
+:root {
+  /* ─── BASE SPACING ─── */
+  --sp-2:   2px;
+  --sp-4:   4px;
+  --sp-6:   6px;
+  --sp-8:   8px;
+  --sp-12:  12px;
+  --sp-16:  16px;
+  --sp-20:  20px;
+  --sp-24:  24px;
+  --sp-32:  32px;
+  --sp-40:  40px;
+  --sp-48:  48px;
+  --sp-56:  56px;
+  --sp-64:  64px;
+  --sp-80:  80px;
+  --sp-96:  96px;
+
+  /* ─── COMPONENT SPACING ─── */
+  --nav-height:          64px;
+  --panel-left-margin:   48px;
+  --panel-right-margin:  48px;
+  --panel-max-width:     600px;
+  --signal-sliver:       12vw;
+  --cta-btn-width:       280px;
+  --cta-btn-height:      52px;
+  --cta-pill-height:     40px;
+  --cta-pill-pad:        20px;
+  --cta-pill-radius:     20px;
+
+  /* ─── BREAKPOINTS ─── */
+  --bp-mobile:  768px;
+  --bp-tablet:  1280px;
+  --bp-desktop: 1440px;
+
+  /* === ANIMATION TIMING === */
+  --duration-scramble:         800ms;
+  --duration-page-transition:  1200ms;
+  --duration-cascade-step:     120ms;
+  --duration-glow-pulse:       3s;
+  --ease-out-expo:             cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-premium:       cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* === PAGE SPACING === */
+  --page-padding-x:            6vw;
+  --page-padding-y:            8vh;
+  --section-gap:               18vh;
+  --detail-content-max-width:  860px;
+
+  /* === CONSTELLATION VISUAL === */
+  --constellation-boundary-opacity: 0.06;
+  --constellation-glow-opacity:     0.09;
+  --constellation-legend-opacity:   0.40;
+  --node-radius-anchor:             20px;
+  --node-radius-primary:            14px;
+  --node-radius-secondary:          8px;
+
+  /* === WORKFLOW DETAIL PAGE === */
+  --detail-bg-start:            #ffffff;
+  --detail-bg-end:              #0a0a0a;
+  --detail-transition-duration: 1200ms;
+  --detail-watermark-opacity:   0.035;
+  --detail-scramble-chars:      "!@#$%^&*<>?/|\\~`";
+}
+:root {
+  --z-navbar: 100;
+  --z-hero-shrink: 10;
+  --z-hero-canvas-frame: 2;
+  --z-hero-canvas-overlay: 1;
+  --z-loading: 9999;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding-x:     5vw;
+    --panel-left-margin:  16px;
+    --panel-right-margin: 16px;
+    --cta-btn-width:      100%;
+    --section-gap:        8vh;
+    --signal-sliver:      0px; /* no sliver on mobile — full bottom sheet */
+  }
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  :root {
+    --safe-bottom: env(safe-area-inset-bottom);
+  }
+}

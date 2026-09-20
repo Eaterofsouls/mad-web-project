@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block non-content assets from search index
+Disallow: /media/
+Disallow: /api/
+Disallow: /fonts/
+
+Sitemap: https://madmarketers.in/sitemap.xml

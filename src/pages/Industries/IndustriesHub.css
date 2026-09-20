@@ -1,0 +1,182 @@
+/* Industries Hub - Asymmetric Nowness Grid */
+.industries-hub {
+  min-height: 100vh;
+  background: var(--void);
+  padding-top: var(--nav-height);
+  color: var(--text-primary);
+}
+
+.industries-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+}
+
+.industries-header {
+  margin-bottom: 64px;
+  max-width: 600px;
+}
+
+.industries-label {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--text-structural);
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.industries-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.industries-sub {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--text-metadata);
+  line-height: 1.8;
+}
+
+/* ── Asymmetric Layout ── */
+.industries-asymmetric-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.industries-row-1 {
+  display: flex;
+  gap: 16px;
+}
+
+.industries-row-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ── Card Styles ── */
+.industry-card {
+  background: var(--void);
+  border: 1px solid rgba(242, 238, 228, 0.1);
+  padding: 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.industry-card:hover {
+  border-color: rgba(242, 238, 228, 0.3);
+  transform: translateY(-2px);
+}
+
+.feature-card {
+  flex: 0 0 calc(65% - 8px);
+  min-height: 460px;
+}
+
+.industry-card-stack {
+  flex: 0 0 calc(35% - 8px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.industry-card-stack .industry-card {
+  flex: 1;
+  min-height: 222px;
+}
+
+.industries-row-grid .industry-card {
+  min-height: 280px;
+}
+
+/* ── Card Content ── */
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.industry-card-name {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.industry-card-count {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-structural);
+  opacity: 0.6;
+}
+
+.industry-card-caption {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+  .industries-row-1 {
+    flex-direction: column;
+  }
+  .feature-card {
+    min-height: 320px;
+    flex: none;
+  }
+  .industry-card-stack {
+    flex-direction: row;
+    flex: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .industries-row-grid {
+    grid-template-columns: 1fr;
+  }
+  .industry-card-stack {
+    flex-direction: column;
+  }
+}
+
+/* ── PHASE 10: MOBILE FIXES ─────────────────────────────────────────────── */
+.industries-container {
+  padding: 80px var(--page-padding-x, 5vw) 120px;
+}
+
+@media (max-width: 768px) {
+  .industries-row-1 {
+    flex-direction: column;
+  }
+
+  .feature-card {
+    min-height: 280px;
+    flex: none;
+    width: 100%;
+  }
+
+  .industry-card-stack {
+    flex: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .industries-row-grid {
+    grid-template-columns: 1fr;
+  }
+}

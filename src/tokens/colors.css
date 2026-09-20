@@ -1,0 +1,114 @@
+/* MAD — Color Token System */
+/* MASTER SOURCE: MAD_MASTER_CONSOLIDATION.md Part 2.2 */
+/* DO NOT modify values without updating the consolidation document */
+
+:root {
+  /* ─── SURFACE FOUNDATIONS ─── */
+  --void:            #050507;   /* Loading screen */
+  --canvas:          #0a0a0f;   /* Explorer canvas */
+  --panel:           #141418;   /* Signal panel */
+  --gallery:         #faf9f7;   /* Gallery background */
+  --gallery-return:  #f4f2ee;   /* Post-Explorer light sections */
+
+  /* ─── TEXT — DARK CONTEXTS ─── */
+  --text-primary:    #f2f0ec;
+  /* Old --text-secondary was #c8c4bc */
+  --text-secondary:  rgba(242, 240, 236, 0.55);
+  --text-tertiary:   #8a8880;
+  /* Old --text-muted was #565450 */
+  --text-muted:      rgba(242, 240, 236, 0.38);
+  --text-ghost:      #3a3836;
+  --text-structural: #4a4846;
+
+  /* ─── TEXT — GALLERY (LIGHT) ─── */
+  --light-primary:   #0f0f0d;
+  --light-secondary: #1a1a18;
+  --light-tertiary:  #505050;
+  --light-muted:     #888884;
+  --light-ghost:     #bfbcb8;
+
+  /* ─── REALITY SENTENCE ─── */
+  --reality-text:    #ede8e0;
+
+  /* ─── NODE SYSTEM ─── */
+  --node-default:    rgba(242,238,228,0.85);
+  --node-priority:   rgba(242,238,228,1.00);
+  --node-hover:      rgba(242,238,228,1.00);
+  --node-adjacent:   rgba(242,238,228,0.95);
+  --node-suppressed: rgba(242,238,228,0.65);
+  --node-filtered:   rgba(242,238,228,0.15);
+
+  /* ─── STRUCTURAL LINES ─── */
+  --rule-heavy:      #1e1e24;
+  --rule-light:      #181820;
+  --rule-mechanism:  #242430;
+  --kinetic-line:    rgba(242,238,228,0.15);
+
+  /* ─── CONVERSION ─── */
+  --cta-bg:          #f2f0ec;
+  --cta-text:        #0a0a0f;
+  --cta-hover:       #e8e4da;
+  --cta-active:      #d8d4ca;
+
+  /* ─── CANVAS ATMOSPHERE ─── */
+  --canvas-glow:      rgba(242,238,228,0.04);
+  --star-particle:    rgba(242,238,228,0.06);
+  --star-particle-hi: rgba(242,238,228,0.10);
+  --cluster-ghost:    rgba(242,238,228,0.20);
+
+  /* ─── NAVBAR ─── */
+  --nav-glass:       rgba(10,10,15,0.82);
+  --nav-frost:       rgba(242,240,236,0.04);
+
+  /* ─── ECLIPSE MIDPOINT ─── */
+  --eclipse-dusk:    #504e4a;
+
+  /* ─── ADDITIONAL TOKENS ─── */
+  --video-overlay: rgba(5, 5, 7, 0.52);
+  --rule-line: rgba(242, 240, 236, 0.08);
+  --rule-line-strong: rgba(242, 240, 236, 0.15);
+  --text-whisper: rgba(242, 240, 236, 0.28);
+  --pledge-surface: #0d0d14;
+  --accent-thread: rgba(180, 200, 230, 0.7);
+
+  /* ─── NEW EXPLORER TOKENS (PROMPT 01) ─── */
+  /* Kinetic Lines — boosted for visibility */
+  --kinetic-line-rest:    rgba(242, 238, 228, 0.55);
+  --kinetic-line-pulse:   rgba(242, 238, 228, 0.85);
+  --kinetic-line-active:  rgba(242, 238, 228, 0.80);
+  --kinetic-dash-array:   3 10;
+  --kinetic-dash-speed:   12s;
+
+  /* Node glow tiers — boosted */
+  --node-glow-anchor:     rgba(242, 238, 228, 0.55);
+  --node-glow-primary:    rgba(242, 238, 228, 0.30);
+  --node-glow-secondary:  rgba(242, 238, 228, 0.15);
+
+  /* Tooltip card (bottom-left panel) */
+  --tooltip-bg:           rgba(10, 10, 13, 0.97);
+  --tooltip-border:       rgba(242, 238, 228, 0.25);
+  --tooltip-width:        320px;
+
+  /* Canvas chrome — fully visible */
+  --chrome-bg:            rgba(8, 8, 12, 0.95);
+  --chrome-border:        rgba(242, 238, 228, 0.25);
+  --chrome-text:          rgba(242, 238, 228, 0.85);
+  --chrome-text-strong:   rgba(242, 238, 228, 1.00);
+
+  /* Scrim */
+  --canvas-scrim:         rgba(5, 5, 8, 0.55);
+
+  /* Empty state */
+  --empty-state-text:     rgba(242, 238, 228, 0.28);
+
+  /* Boundary ring */
+  --boundary-ring:        rgba(242, 238, 228, 0.18);
+
+  /* Cluster bloom colors — boosted opacity */
+  --bloom-production:     rgba(255, 160, 80,  0.22);
+  --bloom-supply:         rgba(80,  180, 255, 0.22);
+  --bloom-quality:        rgba(180, 255, 140, 0.22);
+  --bloom-commercial:     rgba(255, 100, 180, 0.22);
+  --bloom-financial:      rgba(120, 100, 255, 0.22);
+  --bloom-logistics:      rgba(255, 220, 80,  0.22);
+}

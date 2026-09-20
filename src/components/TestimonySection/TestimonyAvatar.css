@@ -1,0 +1,14 @@
+.testimony-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-tertiary);
+  flex-shrink: 0;
+}
+
+.testimony-section--dark .testimony-avatar {
+  color: var(--text-tertiary);
+}

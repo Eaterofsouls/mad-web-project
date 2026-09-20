@@ -1,0 +1,245 @@
+/* ── INLINE DIAGRAM CONTAINER ─────────────────────────────────────────────── */
+.workflow-diagram-container {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: var(--canvas, #0a0a0f);
+  border: 1px solid var(--rule-heavy);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Mobile: make it obviously tappable */
+.workflow-diagram-container.wf-mobile-tap {
+  cursor: pointer;
+  min-height: 220px;
+}
+
+.workflow-diagram-container.wf-mobile-tap:active {
+  opacity: 0.85;
+}
+
+.workflow-diagram-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--rule-heavy);
+  background: rgba(10, 10, 15, 0.4);
+}
+
+.workflow-diagram-header h4 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary, rgba(242, 240, 236, 0.55));
+  margin-bottom: 8px;
+}
+
+.workflow-diagram-header p {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+.react-flow-wrapper {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  /* Disable touch events on inline mobile diagram so tap hits the container */
+  pointer-events: none;
+}
+
+@media (min-width: 769px) {
+  .react-flow-wrapper {
+    pointer-events: auto;
+  }
+}
+
+/* ── TAP HINT (mobile only) ──────────────────────────────────────────────── */
+.wf-tap-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-primary);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(242, 240, 236, 0.45);
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border: 1px solid rgba(242, 238, 228, 0.12);
+  border-radius: 99px;
+  pointer-events: none;
+  white-space: nowrap;
+  animation: wfHintPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes wfHintPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ── CUSTOM NODE STYLES ───────────────────────────────────────────────────── */
+.workflow-node {
+  padding: 16px 24px;
+  border-radius: 0px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary, #f2f0ec);
+  background: var(--panel, #141418);
+  border: 1px solid var(--rule-heavy);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  min-width: 180px;
+  text-align: center;
+}
+
+.workflow-node.input-node {
+  border-left: 3px solid var(--text-tertiary);
+}
+
+.workflow-node.processing-node {
+  border: 1px solid var(--text-tertiary);
+  background: rgba(242, 238, 228, 0.05);
+}
+
+.workflow-node.output-node {
+  border-right: 3px solid var(--text-secondary, rgba(242, 240, 236, 0.55));
+}
+
+.workflow-node.action-node {
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  border: none;
+}
+
+/* ── REACT FLOW CONTROL OVERRIDES ────────────────────────────────────────── */
+.react-flow__controls {
+  box-shadow: none !important;
+  border: 1px solid var(--rule-heavy) !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: var(--panel, #141418) !important;
+  border-bottom: 1px solid var(--rule-heavy) !important;
+  fill: var(--text-secondary, rgba(242, 240, 236, 0.55)) !important;
+  border-radius: 0 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--rule-heavy) !important;
+}
+
+/* ── LIGHTBOX BACKDROP ───────────────────────────────────────────────────── */
+.wf-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-end;
+  animation: wfBackdropIn 0.25s ease forwards;
+}
+
+@keyframes wfBackdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── LIGHTBOX PANEL ──────────────────────────────────────────────────────── */
+.wf-lightbox-panel {
+  width: 100%;
+  height: 92vh;
+  background: var(--canvas, #0a0a0f);
+  border-top: 1px solid var(--rule-heavy);
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: wfPanelSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wfPanelSlideIn {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+/* ── LIGHTBOX HEADER ─────────────────────────────────────────────────────── */
+.wf-lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--rule-heavy);
+  background: rgba(10, 10, 15, 0.95);
+  flex-shrink: 0;
+}
+
+.wf-lightbox-title {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-secondary, rgba(242, 240, 236, 0.55));
+  text-transform: uppercase;
+}
+
+.wf-lightbox-close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--rule-heavy);
+  background: transparent;
+  color: var(--text-secondary, rgba(242, 240, 236, 0.55));
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.wf-lightbox-close:hover,
+.wf-lightbox-close:active {
+  background: var(--rule-heavy);
+  color: var(--text-primary, #f2f0ec);
+}
+
+/* ── LIGHTBOX HINT ───────────────────────────────────────────────────────── */
+.wf-lightbox-hint {
+  font-family: var(--font-primary);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: rgba(242, 240, 236, 0.3);
+  text-align: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(242, 238, 228, 0.06);
+  flex-shrink: 0;
+  background: rgba(10, 10, 15, 0.6);
+}
+
+/* ── LIGHTBOX CANVAS ─────────────────────────────────────────────────────── */
+.wf-lightbox-canvas {
+  flex: 1;
+  width: 100%;
+  min-height: 0; /* critical for flex child to shrink */
+  touch-action: none; /* let ReactFlow handle all touch */
+}
+
+.wf-lightbox-canvas .react-flow-wrapper {
+  pointer-events: auto !important;
+}
+
+/* Ensure ReactFlow controls show in lightbox */
+.wf-lightbox-canvas .react-flow__controls {
+  bottom: 16px;
+  right: 16px;
+}

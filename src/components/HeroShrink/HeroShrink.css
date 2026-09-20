@@ -1,0 +1,76 @@
+.hero-shrink-scroll-container {
+  position: relative;
+  height: 130vh; /* sticky height (100vh) + spacer (30vh) */
+}
+
+.hero-shrink-spacer {
+  height: 30vh;
+}
+
+/* Mobile: reduce total height and spacer */
+@media (max-width: 768px) {
+  .hero-shrink-scroll-container {
+    height: 110vh;
+  }
+  .hero-shrink-spacer {
+    height: 10vh;
+  }
+}
+
+.hero-shrink-root {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: var(--z-hero-shrink);
+  overflow: hidden;
+  /* The scroll animation is bound to the parent scroll context */
+}
+
+.hero-shrink-inner {
+  width: 100%;
+  height: 100%;
+  transform-origin: top center;
+  /* Scroll-driven animation: scales from 1 to 0.72, translates up ~8vh */
+  animation: heroShrinkAnim linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0px 80vh;
+}
+
+@keyframes heroShrinkAnim {
+  0% {
+    transform: scale(1) translateY(0);
+    border-radius: 0px;
+  }
+  100% {
+    transform: scale(0.72) translateY(-6vh);
+    border-radius: 8px;
+  }
+}
+
+.hero-declaration-words {
+  animation: heroWordsDim linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0px 80vh;
+}
+
+@keyframes heroWordsDim {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-shrink-inner {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Mobile: disable the scale-down — hero just scrolls off normally */
+@media (max-width: 768px) {
+  .hero-shrink-inner {
+    animation: none !important;
+    transform: none !important;
+  }
+  .hero-shrink-root {
+    position: relative; /* not sticky on mobile — let it scroll naturally */
+  }
+}

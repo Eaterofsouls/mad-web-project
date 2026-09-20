@@ -1,0 +1,562 @@
+/* ─────────────────────────────────────────────────────────────
+   MAD — About Page: Editorial Manifesto
+   Design: Full-viewport scroll chapters, SVG discipline glyphs,
+   stagger-reveal animations, alternating dark backgrounds.
+───────────────────────────────────────────────────────────── */
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.about-page {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.about-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px var(--page-padding-x, 6vw) 80px;
+  text-align: center;
+  position: relative;
+}
+
+.about-hero__inner {
+  max-width: 720px;
+}
+
+.about-hero__eyebrow {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-structural, #4a4846);
+  margin-bottom: 40px;
+}
+
+.about-hero__headline {
+  font-family: var(--font-display, 'League Spartan', sans-serif);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+
+.about-hero__sub {
+  font-family: var(--font-primary);
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--text-secondary);
+  line-height: var(--lh-reality, 1.55);
+  max-width: 560px;
+  margin: 0 auto 60px;
+}
+
+.about-hero__scroll-cue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.4;
+  animation: aboutScrollPulse 3s ease-in-out infinite;
+}
+
+.about-hero__scroll-cue span {
+  font-family: var(--font-primary);
+  font-size: 8px;
+  letter-spacing: 0.20em;
+  color: var(--text-muted);
+}
+
+.about-hero__scroll-cue::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--text-muted), transparent);
+}
+
+@keyframes aboutScrollPulse {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ── STICKY COUNTER ────────────────────────────────────────── */
+.about-counter {
+  position: fixed;
+  top: 50%;
+  right: var(--page-padding-x, 6vw);
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  pointer-events: none;
+}
+
+.about-counter__current {
+  font-family: var(--font-display, 'League Spartan', sans-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  transition: color 0.4s ease;
+}
+
+.about-counter__sep {
+  font-family: var(--font-primary);
+  font-size: 10px;
+  color: var(--text-structural);
+  letter-spacing: 0.1em;
+  margin: 4px 0;
+}
+
+.about-counter__total {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-structural);
+  letter-spacing: 0.12em;
+}
+
+/* ── TEAM CHAPTER ──────────────────────────────────────────── */
+.about-chapter {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px var(--page-padding-x, 6vw);
+  gap: 6vw;
+  border-top: 1px solid var(--rule-heavy, #1e1e24);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Reversed layout — text on right, glyph on left */
+.about-chapter--reversed {
+  flex-direction: row-reverse;
+}
+
+/* ── Text column ── */
+.about-chapter__text {
+  flex: 1 1 50%;
+  max-width: 540px;
+  opacity: 0.01;
+  transform: translateX(-40px);
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-chapter--reversed .about-chapter__text {
+  transform: translateX(40px);
+}
+
+.about-chapter--visible .about-chapter__text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-chapter__label {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-structural, #4a4846);
+  margin-bottom: 28px;
+}
+
+.about-chapter__name {
+  font-family: var(--font-display, 'League Spartan', sans-serif);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.about-chapter__role {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.about-chapter__rule {
+  width: 40px;
+  height: 1px;
+  background: var(--rule-line-strong, rgba(242, 240, 236, 0.15));
+  margin: 28px 0;
+}
+
+.about-chapter__bio {
+  font-family: var(--font-primary);
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: var(--lh-body, 1.82);
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.about-chapter__discipline {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-structural, #4a4846);
+}
+
+/* ── Visual / Glyph column ── */
+.about-chapter__visual {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.01;
+  transform: translateX(40px);
+  transition: opacity 900ms cubic-bezier(0.16, 1, 0.3, 1) 200ms,
+              transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 200ms;
+}
+
+.about-chapter--reversed .about-chapter__visual {
+  transform: translateX(-40px);
+}
+
+.about-chapter--visible .about-chapter__visual {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-chapter__glyph-wrap {
+  width: clamp(200px, 28vw, 360px);
+  height: clamp(200px, 28vw, 360px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ── COMMON ── */
+.about-glyph {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  will-change: transform;
+  transform: translateZ(0);
+}
+/* Glyph path stagger animations — triggered once chapter is visible */
+.glyph-path {
+  opacity: 0.01;
+  transition: opacity 600ms ease;
+}
+
+.about-chapter--visible .glyph-path--1 { opacity: 1; transition-delay: 300ms; }
+.about-chapter--visible .glyph-path--2 { opacity: 1; transition-delay: 450ms; }
+.about-chapter--visible .glyph-path--3 { opacity: 1; transition-delay: 600ms; }
+.about-chapter--visible .glyph-path--4 { opacity: 1; transition-delay: 750ms; }
+.about-chapter--visible .glyph-path--5 { opacity: 1; transition-delay: 900ms; }
+.about-chapter--visible .glyph-path--6 { opacity: 1; transition-delay: 1050ms; }
+
+/* Spinning pulse ring on AI glyph */
+.glyph-pulse {
+  opacity: 0.01;
+  transform-origin: center;
+  animation: none;
+}
+
+.about-chapter--visible .glyph-pulse {
+  opacity: 1;
+  animation: glyphSpin 20s linear infinite;
+  transition: opacity 600ms ease 800ms;
+}
+
+@keyframes glyphSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* 5. Aryan (Engineering) - Code to Isometric Server */
+.glyph-code-path {
+  stroke-dasharray: 850;
+  stroke-dashoffset: 160;
+  stroke: rgba(242,240,236,0.5);
+  fill: rgba(242,240,236,0);
+}
+.about-chapter--visible .glyph-code-path {
+  animation: codeDraw 8s cubic-bezier(0.4, 0, 0.2, 1) infinite, serverGlow 8s ease-in-out infinite;
+}
+@keyframes codeDraw {
+  0%, 5% { stroke-dashoffset: 160; }
+  20%, 80% { stroke-dashoffset: 0; }
+  95%, 100% { stroke-dashoffset: 160; }
+}
+@keyframes serverGlow {
+  0%, 20% { stroke: rgba(242,240,236,0.6); fill: rgba(242,240,236,0); }
+  25%, 75% { stroke: rgba(242,240,236,1); fill: rgba(242,240,236,0.05); }
+  80%, 100% { stroke: rgba(242,240,236,0.6); fill: rgba(242,240,236,0); }
+}
+
+.glyph-code-cursor {
+  transform: translateX(0);
+}
+.about-chapter--visible .glyph-code-cursor {
+  animation: cursorType 8s cubic-bezier(0.4, 0, 0.2, 1) infinite, cursorBlink 0.8s step-end infinite;
+}
+@keyframes cursorType {
+  0%, 5% { transform: translateX(0); }
+  20%, 80% { transform: translateX(160px); }
+  95%, 100% { transform: translateX(0); }
+}
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.01; }
+}
+/* ── STORY ANIMATIONS ── */
+
+/* 1. Urvi (Brand) - Lighthouse */
+.glyph-ocean {
+  animation: oceanWave 4s linear infinite;
+}
+@keyframes oceanWave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100px); }
+}
+
+.glyph-beam {
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+.about-chapter--visible .glyph-beam {
+  animation: beamSweep 6s ease-in-out infinite alternate;
+}
+@keyframes beamSweep {
+  0% { transform: rotate(-55deg); opacity: 0.01; }
+  20% { opacity: 0.5; }
+  50% { transform: rotate(0deg); opacity: 0.8; }
+  80% { opacity: 0.5; }
+  100% { transform: rotate(55deg); opacity: 0.01; }
+}
+
+/* 2. Darpan (Design) - True SVG Morph (Handled inside About.tsx) */
+
+/* 3. Daksh (AI) - Server Rack Assembly */
+.ai-chassis {
+  opacity: 0.01;
+}
+.about-chapter--visible .ai-chassis {
+  animation: chassisDrop 6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+@keyframes chassisDrop {
+  0%, 5% { transform: translateY(-40px); opacity: 0.01; }
+  15%, 85% { transform: translateY(0); opacity: 1; }
+  90%, 100% { transform: translateY(40px); opacity: 0.01; }
+}
+
+.ai-blade {
+  opacity: 0.01;
+}
+.about-chapter--visible .ai-blade--1 { animation: bladeSlide 6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite; animation-delay: 1s; }
+.about-chapter--visible .ai-blade--2 { animation: bladeSlide 6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite; animation-delay: 1.5s; }
+.about-chapter--visible .ai-blade--3 { animation: bladeSlide 6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite; animation-delay: 1.5s; }
+
+@keyframes bladeSlide {
+  0%, 10% { transform: translateX(40px); opacity: 0.01; }
+  25%, 85% { transform: translateX(0); opacity: 1; }
+  90%, 100% { transform: translateX(0); opacity: 0.01; }
+}
+
+.ai-blade-status {
+  opacity: 0.1;
+}
+.about-chapter--visible .ai-blade--1 .ai-blade-status { animation: statusBlink 6s infinite; animation-delay: 1.5s; }
+.about-chapter--visible .ai-blade--2 .ai-blade-status { animation: statusBlink 6s infinite; animation-delay: 2s; }
+.about-chapter--visible .ai-blade--3 .ai-blade-status { animation: statusBlink 6s infinite; animation-delay: 2s; }
+
+@keyframes statusBlink {
+  0%, 10% { opacity: 0.1; }
+  15%, 85% { opacity: 1; }
+  90%, 100% { opacity: 0.1; }
+}
+
+.ai-cable {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+}
+.about-chapter--visible .ai-cable--1 { animation: cablePlug 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; animation-delay: 2s; }
+.about-chapter--visible .ai-cable--2 { animation: cablePlug 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; animation-delay: 2.5s; }
+.about-chapter--visible .ai-cable--3 { animation: cablePlug 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; animation-delay: 2.5s; }
+
+@keyframes cablePlug {
+  0%, 10% { stroke-dashoffset: 200; opacity: 1; }
+  25%, 85% { stroke-dashoffset: 0; opacity: 1; }
+  90%, 100% { stroke-dashoffset: 0; opacity: 0.01; }
+}
+
+/* 4. Mihir (Security) */
+.about-chapter--visible .glyph-arrow {
+  animation: arrowFly 4s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+@keyframes arrowFly {
+  0% { transform: translateX(-80px); opacity: 0.01; }
+  5% { transform: translateX(-40px); opacity: 1; }
+  25% { transform: translateX(20px); opacity: 1; }
+  26%, 100% { transform: translateX(20px); opacity: 0.01; }
+}
+
+.glyph-forcefield {
+  transform-origin: right center;
+  transform-box: fill-box;
+}
+.about-chapter--visible .glyph-forcefield {
+  animation: shieldRipple 4s ease-out infinite;
+}
+@keyframes shieldRipple {
+  0%, 24% { opacity: 0.2; transform: scaleX(1); stroke-width: 1; }
+  25% { opacity: 1; transform: scaleX(0.9); stroke-width: 2; }
+  32% { opacity: 0.2; transform: scaleX(1); stroke-width: 1; }
+  36.5% { opacity: 0.2; transform: scaleX(1); stroke-width: 1; }
+  37.5% { opacity: 1; transform: scaleX(0.9); stroke-width: 2; }
+  45% { opacity: 0.2; transform: scaleX(1); stroke-width: 1; }
+  54% { opacity: 0.2; transform: scaleX(1); stroke-width: 1; }
+  55% { opacity: 1; transform: scaleX(0.9); stroke-width: 3; }
+  65%, 100% { opacity: 0.2; transform: scaleX(1); stroke-width: 1; }
+}
+
+.glyph-shard {
+  transform-origin: center;
+  opacity: 0.01;
+}
+.about-chapter--visible .glyph-shard--1 { animation: shatterScatter1 4s ease-out infinite; }
+.about-chapter--visible .glyph-shard--2 { animation: shatterScatter2 4s ease-out infinite; }
+.about-chapter--visible .glyph-shard--3 { animation: shatterScatter3 4s ease-out infinite; }
+.about-chapter--visible .glyph-shard--4 { animation: shatterScatter4 4s ease-out infinite; }
+
+@keyframes shatterScatter1 {
+  0%, 25% { transform: translate(0, 0); opacity: 0.01; }
+  26% { transform: translate(0, 0); opacity: 1; }
+  40% { transform: translate(-20px, -20px) rotate(-45deg); opacity: 0.01; }
+  100% { transform: translate(-20px, -20px); opacity: 0.01; }
+}
+@keyframes shatterScatter2 {
+  0%, 25% { transform: translate(0, 0); opacity: 0.01; }
+  26% { transform: translate(0, 0); opacity: 1; }
+  40% { transform: translate(15px, 20px) rotate(45deg); opacity: 0.01; }
+  100% { transform: translate(15px, 20px); opacity: 0.01; }
+}
+@keyframes shatterScatter3 {
+  0%, 25% { transform: translate(0, 0); opacity: 0.01; }
+  26% { transform: translate(0, 0); opacity: 1; }
+  40% { transform: translate(-15px, 15px) rotate(-60deg); opacity: 0.01; }
+  100% { transform: translate(-15px, 15px); opacity: 0.01; }
+}
+@keyframes shatterScatter4 {
+  0%, 25% { transform: translate(0, 0); opacity: 0.01; }
+  26% { transform: translate(0, 0); opacity: 1; }
+  40% { transform: translate(10px, -25px) rotate(30deg); opacity: 0.01; }
+  100% { transform: translate(10px, -25px); opacity: 0.01; }
+}
+
+/* 5. Yash (QA) */
+.glyph-hammer-pivot {
+  transform-origin: right center;
+  transform-box: fill-box;
+}
+.about-chapter--visible .glyph-hammer-pivot {
+  animation: hammerStrike 3s cubic-bezier(0.5, 0, 0.8, 1) infinite;
+}
+@keyframes hammerStrike {
+  0%, 10% { transform: rotate(0deg); } /* Resting on anvil */
+  30%, 40% { transform: rotate(60deg); } /* Lifted up high */
+  45% { transform: rotate(0deg); } /* STRIKE! */
+  100% { transform: rotate(0deg); }
+}
+
+.glyph-shockwave {
+  transform-origin: center;
+  transform-box: fill-box;
+  opacity: 0.01;
+}
+.about-chapter--visible .glyph-shockwave {
+  animation: shockwave 3s ease-out infinite;
+}
+@keyframes shockwave {
+  0%, 44% { opacity: 0.01; transform: scaleX(0); }
+  45% { opacity: 0.8; transform: scaleX(0.2); }
+  65%, 100% { opacity: 0.01; transform: scaleX(2.5); }
+}
+
+/* ── REDUCED MOTION ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .about-chapter__text,
+  .about-chapter__visual {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .glyph-path {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .glyph-pulse,
+  .glyph-cursor {
+    animation: none !important;
+    opacity: 0.4 !important;
+  }
+  .about-hero__scroll-cue {
+    animation: none;
+  }
+}
+
+/* ── MOBILE ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 100px 5vw 60px;
+    min-height: 85vh;
+  }
+
+  .about-chapter {
+    flex-direction: column !important;
+    min-height: auto;
+    padding: 80px 5vw 60px;
+    gap: 48px;
+  }
+
+  .about-chapter__text {
+    max-width: 100%;
+    transform: translateY(20px) !important;
+  }
+
+  .about-chapter--visible .about-chapter__text {
+    transform: translateY(0) !important;
+  }
+
+  .about-chapter__visual {
+    transform: translateY(20px) !important;
+    order: -1; /* Glyph first on mobile */
+  }
+
+  .about-chapter--visible .about-chapter__visual {
+    transform: translateY(0) !important;
+  }
+
+  .about-chapter__glyph-wrap {
+    width: clamp(140px, 55vw, 200px);
+    height: clamp(140px, 55vw, 200px);
+  }
+
+  .about-counter {
+    display: none;
+  }
+
+  .about-chapter__name {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+}

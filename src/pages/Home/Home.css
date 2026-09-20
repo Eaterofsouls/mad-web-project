@@ -1,0 +1,687 @@
+.home-container {
+  width: 100%;
+  color: var(--text-primary);
+}
+
+.home-main {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.home-white-zone {
+  background: var(--gallery, #faf9f7);
+  position: relative;
+  z-index: 2;
+  overflow-x: clip;
+  width: 100%;
+}
+
+/* ─── STAGE 1: MARKET REALITY ─── */
+.stage-1-reality {
+  min-height: 100vh;
+  background-color: var(--gallery);
+  color: var(--light-primary);
+  display: flex;
+  align-items: center;
+  padding: 0 12vw;
+}
+
+.reality-hero-content {
+  max-width: 800px;
+}
+
+.reality-headline {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+  color: var(--light-primary);
+}
+
+.reality-list {
+  list-style: none;
+  font-size: 21px;
+  color: var(--light-tertiary);
+  line-height: 1.6;
+}
+
+.reality-list li::before {
+  content: "→";
+  margin-right: 16px;
+  color: var(--light-muted);
+}
+
+/* ─── STAGE 2: COMPETITIVE CURIOSITY ─── */
+.stage-2-curiosity {
+  min-height: 80vh;
+  background-color: var(--eclipse-dusk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5vw;
+}
+
+.curiosity-transition {
+  opacity: 0.3;
+  transform: scale(0.95);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.curiosity-transition.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.curiosity-question {
+  font-size: 36px;
+  font-weight: 500;
+  max-width: 700px;
+  color: var(--text-primary);
+}
+
+/* ─── STAGE 3: OPERATIONAL RECOGNITION ─── */
+.stage-3-recognition {
+  min-height: 100vh;
+  background-color: var(--canvas);
+  padding: 120px 5vw;
+  border-top: 1px solid var(--rule-heavy);
+}
+
+.recognition-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 60px;
+}
+
+.diagram-wrapper {
+  width: 100%;
+}
+
+/* ─── STAGE 4: AUTHORITY ─── */
+.stage-4-authority {
+  min-height: 100vh;
+  background-color: var(--void);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 1px solid var(--rule-heavy);
+}
+
+.authority-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 0 24px;
+}
+
+.authority-headline {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.authority-stats {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 48px;
+}
+
+.authority-stats .dot {
+  margin: 0 16px;
+  color: var(--text-ghost);
+}
+
+.authority-cta {
+  display: inline-block;
+  padding: 16px 32px;
+  border: 1px solid rgba(242, 238, 228, 0.25);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.authority-cta:hover {
+  background: rgba(242, 238, 228, 0.08);
+  border-color: rgba(242, 238, 228, 0.45);
+}
+
+/* ─── STAGE 5: OPPORTUNITY ─── */
+.stage-5-opportunity {
+  padding: 120px 0;
+  background-color: var(--panel);
+  text-align: center;
+  border-top: 1px solid var(--rule-heavy);
+  overflow: hidden;
+}
+
+.opportunity-headline {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.opportunity-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+}
+
+.industry-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  background: var(--text-primary);
+  color: var(--light-primary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.industry-btn:hover {
+  background: var(--text-secondary);
+}
+
+/* Reality Strip Animation */
+.reality-strip-inner {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-left 40s linear infinite;
+  opacity: 0.5;
+}
+
+.reality-strip-item {
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.reality-strip-separator {
+  margin: 0 40px;
+  color: var(--text-ghost);
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── STAGE 6: CONVERSATION ─── */
+.stage-6-conversation {
+  padding: 160px 5vw;
+  background-color: var(--void);
+  text-align: center;
+  border-top: 1px solid var(--rule-heavy);
+}
+
+.conversation-headline {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.conversation-subtitle {
+  font-size: 18px;
+  color: var(--text-tertiary);
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.conversation-cta {
+  display: inline-block;
+  padding: 24px 64px;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: background 0.2s ease;
+}
+
+.conversation-cta:hover {
+  background: var(--cta-hover);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .reality-headline { font-size: 32px; }
+  .curiosity-question { font-size: 28px; }
+  .authority-headline { font-size: 28px; }
+  .stage-1-reality { padding: 0 6vw; }
+}
+
+/* PROMPT 14 - Scroll Cue */
+.home-scroll-cue {
+  position: absolute;
+  bottom: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(242,238,228,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 600ms ease-out;
+}
+
+.home-scroll-cue span {
+  font-family: var(--font-primary);
+  font-size: 6px;
+  letter-spacing: 0.2em;
+  color: rgba(242,238,228,0.3);
+}
+
+.home-scroll-cue.visible {
+  opacity: 1;
+  animation: homeScrollPulse 3s ease-in-out infinite;
+}
+
+@keyframes homeScrollPulse {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 3px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* PROMPT 15 - Bare Identity Pause */
+.stage-identity-pause {
+  height: 100vh;
+  background: var(--void);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.identity-wordmark {
+  font-family: var(--font-primary);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.identity-wordmark.visible {
+  opacity: 0.85;
+  transition: opacity 600ms ease;
+}
+
+/* PROMPT 16 - Three Line Product Tour */
+.tour-container {
+  position: relative;
+  z-index: 2;
+}
+
+.tour-moment {
+  height: 66vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--page-padding-x);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+
+.tour-moment.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tour-moment.receded {
+  opacity: 0.15;
+  transform: translateY(0);
+}
+
+.tour-moment-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.tour-moment-sub {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--text-metadata);
+  opacity: 0.6;
+}
+
+/* PROMPT 17 - Calm Rest */
+.stage-rest {
+  height: 80vh;
+  background: var(--void);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 var(--page-padding-x);
+}
+
+.rest-line-1 {
+  font-family: var(--font-primary);
+  font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.rest-line-2 {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--text-metadata);
+  opacity: 0;
+  letter-spacing: 0.06em;
+  margin-top: 1.5rem;
+  transform: translateY(12px);
+  transition: opacity 700ms ease 400ms, transform 700ms ease 400ms;
+}
+
+.rest-line-1.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rest-line-2.visible {
+  opacity: 0.7;
+  transform: translateY(0);
+}
+
+/* PROMPT 18 - Evidence Strip */
+.home-evidence-strip {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  background: transparent;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-family: var(--font-primary);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: rgba(242,238,228,0.25);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.home-evidence-strip.visible {
+  opacity: 1;
+}
+
+/* PROMPT 23 - Prospect Engine Section */
+.stage-prospect-engine {
+  height: 500vh;
+  position: relative;
+  background: var(--void);
+}
+
+.prospect-sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.prospect-split {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.prospect-left {
+  flex: 0 0 50%;
+  padding: 0 var(--page-padding-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+
+.prospect-left.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prospect-eyebrow {
+  font-family: var(--font-primary);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: var(--text-structural);
+  opacity: 0.5;
+  margin-bottom: 24px;
+}
+
+.prospect-headline {
+  font-family: var(--font-primary);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+}
+
+.prospect-support,
+.prospect-support-secondary {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: var(--text-metadata);
+  line-height: 1.8;
+  max-width: 400px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.prospect-support {
+  margin-bottom: 24px;
+}
+
+.prospect-support.visible,
+.prospect-support-secondary.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prospect-right {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* PROMPT 24 - Arch Threshold Device */
+.home-arch-svg {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+}
+
+.arch-outer, .arch-inner {
+  fill: none;
+  stroke-width: 1;
+  stroke-dasharray: 0 100;
+  stroke-dashoffset: -50;
+  transition: stroke-dasharray 800ms ease-out, stroke-dashoffset 800ms ease-out;
+}
+
+.arch-outer {
+  stroke: rgba(242, 238, 228, 0.25);
+}
+
+.arch-inner {
+  stroke: rgba(242, 238, 228, 0.15);
+}
+
+.arch-outer.drawn, .arch-inner.drawn {
+  stroke-dasharray: 100 0;
+  stroke-dashoffset: 0;
+}
+
+.arch-apex {
+  fill: rgba(242, 238, 228, 0.6);
+  opacity: 0;
+  transition: opacity 200ms ease-out 800ms;
+}
+
+.arch-apex.visible {
+  opacity: 1;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 100ms !important;
+  }
+}
+/* PROMPT 14 - Eclipse Scroll Transition */
+.eclipse-container {
+  background: var(--gallery, #faf9f7);
+  overflow-x: clip;
+  width: 100%;
+}
+
+
+/* ── PHASE 3: COMPREHENSIVE MOBILE LAYOUT ──────────────────────────────── */
+@media (max-width: 768px) {
+  .stage-1-reality {
+    padding: 80px 5vw 60px;
+    align-items: flex-start;
+  }
+
+  .reality-headline {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .reality-list {
+    font-size: 17px;
+  }
+
+  .curiosity-question {
+    font-size: clamp(22px, 6vw, 30px);
+  }
+
+  .prospect-split {
+    flex-direction: column;
+  }
+
+  .prospect-left,
+  .prospect-right {
+    flex: none;
+    width: 100%;
+  }
+
+  .prospect-left {
+    padding: 40px 5vw 24px;
+  }
+
+  .prospect-right {
+    height: 280px;
+  }
+
+  .home-evidence-strip {
+    display: none !important;
+  }
+
+  .tour-moment {
+    height: auto;
+    min-height: 40vh;
+    padding: 32px 5vw;
+  }
+
+  .stage-prospect-engine {
+    height: 300vh;
+  }
+
+  .stage-2-curiosity {
+    padding: 60px 5vw;
+    min-height: 60vh;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+  /* Closing CTA tighter on mobile */
+  .cta-section-root {
+    padding: 60px 5vw 80px;
+  }
+
+  /* System label text on mobile */
+  .system-label-text {
+    font-size: 9px !important;
+  }
+
+  /* Prospect Engine section */
+  .stage-prospect-engine {
+    height: auto;
+  }
+
+  /* Rest stage compact */
+  .stage-rest {
+    height: 60vh;
+  }
+
+  /* Tour moment compact */
+  .tour-moment-title {
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+  }
+}
+

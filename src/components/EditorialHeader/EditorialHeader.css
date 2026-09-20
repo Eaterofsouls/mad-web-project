@@ -1,0 +1,81 @@
+.editorial-header {
+  padding: 0 var(--page-padding-x, 6vw);
+  margin-bottom: 0;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: inherit;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-header--top-pad {
+  padding-top: 40px; /* Massively reduced from 120px to remove redundant blank space */
+}
+.editorial-header.is-stuck {
+  /* Removed clip-path to prevent layout collapse */
+}
+.eh-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  align-items: end;
+  padding-bottom: 28px;
+  transform: translateY(0);
+  transition: padding-bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Removed translateY transformations on .eh-row to prevent jumping */
+.editorial-header.is-stuck .eh-row {
+  /* No changes to prevent jump */
+}
+.eh-label {
+  font-family: var(--font-sohne, 'Helvetica Neue', sans-serif);
+  font-size: clamp(36px, 4.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  transform-origin: left bottom;
+  transition: font-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), letter-spacing 0.5s ease;
+}
+/* Removed font shrinking when stuck */
+.eh-body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.eh-body-inner {
+  font-family: var(--font-sohne, 'Helvetica Neue', sans-serif);
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 640px;
+}
+/* Removed opacity hiding when stuck */
+.eh-rule {
+  height: 1px;
+  width: 100%;
+}
+/* Light theme */
+.editorial-header--light .eh-label { color: var(--light-primary, #0f0f0d); }
+.editorial-header--light .eh-body { color: rgba(15,15,13,0.55); }
+.editorial-header--light .eh-rule { background: rgba(15,15,13,0.15); }
+/* Dark theme */
+.editorial-header--dark .eh-label { color: var(--text-primary, #f2f0ec); }
+.editorial-header--dark .eh-body { color: rgba(242,240,236,0.5); }
+.editorial-header--dark .eh-rule { background: rgba(242,240,236,0.15); }
+/* Mobile */
+@media (max-width: 768px) {
+  .eh-row { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
+  .editorial-header--top-pad {
+    padding-top: 72px;
+  }
+  .eh-label {
+    font-size: clamp(28px, 7vw, 48px);
+  }
+  .eh-body {
+    font-size: 15px;
+    max-width: 100%;
+  }
+}
+

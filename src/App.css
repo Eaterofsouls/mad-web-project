@@ -1,0 +1,11 @@
+/* App-level specific overrides, usually empty as components scope their CSS */
+
+.page-entering {
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.page-exiting {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}

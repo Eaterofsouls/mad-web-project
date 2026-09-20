@@ -1,0 +1,422 @@
+[
+  {
+    "short": "Production Delay Prediction",
+    "full": "Production Delay Prediction System",
+    "slug": "production-delay-prediction-system"
+  },
+  {
+    "short": "Predictive Maintenance",
+    "full": "Predictive Maintenance Intelligence",
+    "slug": "predictive-maintenance-intelligence"
+  },
+  {
+    "short": "Raw Material Demand Forecast",
+    "full": "Raw Material Demand Forecasting",
+    "slug": "raw-material-demand-forecasting"
+  },
+  {
+    "short": "Quality Defect Detection",
+    "full": "Quality Defect Detection System",
+    "slug": "quality-defect-detection-system"
+  },
+  {
+    "short": "Production Planning Optimizer",
+    "full": "Production Planning Optimizer",
+    "slug": "production-planning-optimizer"
+  },
+  {
+    "short": "Smart Inventory Reorder",
+    "full": "Smart Inventory Reorder System",
+    "slug": "smart-inventory-reorder-system"
+  },
+  {
+    "short": "Vendor Performance Scorecard",
+    "full": "Vendor Performance Scorecard System",
+    "slug": "vendor-performance-scorecard-system"
+  },
+  {
+    "short": "Dispatch & Delivery Intel",
+    "full": "Dispatch & Delivery Intelligence",
+    "slug": "dispatch-delivery-intelligence"
+  },
+  {
+    "short": "Workforce Productivity Monitor",
+    "full": "Workforce Productivity Monitoring",
+    "slug": "workforce-productivity-monitoring"
+  },
+  {
+    "short": "Energy Consumption Analytics",
+    "full": "Energy Consumption Analytics",
+    "slug": "energy-consumption-analytics"
+  },
+  {
+    "short": "Customer Order Tracking",
+    "full": "Customer Order Tracking Intelligence",
+    "slug": "customer-order-tracking-intelligence"
+  },
+  {
+    "short": "Financial Reporting Automation",
+    "full": "Cost and Financial Reporting Automation",
+    "slug": "cost-and-financial-reporting-automation"
+  },
+  {
+    "short": "Batch Record Automation",
+    "full": "Batch Manufacturing Record Automation",
+    "slug": "batch-manufacturing-record-automation"
+  },
+  {
+    "short": "QC Lab Intelligence (LIMS)",
+    "full": "QC Lab Data Intelligence (LIMS)",
+    "slug": "qc-lab-data-intelligence-lims"
+  },
+  {
+    "short": "Regulatory Compliance Monitor",
+    "full": "Regulatory Compliance Monitoring System",
+    "slug": "regulatory-compliance-monitoring-system"
+  },
+  {
+    "short": "Drug Expiry & Inventory Intel",
+    "full": "Drug Expiry & Inventory Intelligence",
+    "slug": "drug-expiry-inventory-intelligence"
+  },
+  {
+    "short": "Sales Force Effectiveness",
+    "full": "Sales Force Effectiveness Analytics",
+    "slug": "sales-force-effectiveness-analytics"
+  },
+  {
+    "short": "Cold Chain Monitoring",
+    "full": "Cold Chain Monitoring Intelligence",
+    "slug": "cold-chain-monitoring-intelligence"
+  },
+  {
+    "short": "Distributor Demand Forecast",
+    "full": "AI Distributor Demand Forecasting & Auto-Replenishment",
+    "slug": "ai-distributor-demand-forecasting-auto-replenishment"
+  },
+  {
+    "short": "WhatsApp Retailer Ordering",
+    "full": "WhatsApp Retailer Ordering with AI Assortment",
+    "slug": "whatsapp-retailer-ordering-with-ai-assortment"
+  },
+  {
+    "short": "Scheme & Claims Reconciliation",
+    "full": "Secondary Sales, Scheme & Claims Reconciliation",
+    "slug": "secondary-sales-scheme-claims-reconciliation"
+  },
+  {
+    "short": "Computer Vision QC",
+    "full": "Computer Vision Quality & Defect Detection",
+    "slug": "computer-vision-quality-defect-detection"
+  },
+  {
+    "short": "Integrated S&OP Dashboard",
+    "full": "Integrated S&OP / Unified Management Dashboard",
+    "slug": "integrated-sop-unified-management-dashboard"
+  },
+  {
+    "short": "Dealer Credit & Collections",
+    "full": "AI Retailer/Dealer Credit & Collections Risk Scoring",
+    "slug": "ai-retailerdealer-credit-collections-risk-scoring"
+  },
+  {
+    "short": "Multi-Principal SKU Intel",
+    "full": "Multi-Principal SKU & Inventory Intelligence",
+    "slug": "multi-principal-sku-inventory-intelligence"
+  },
+  {
+    "short": "Multi-Principal Demand Forecast",
+    "full": "Demand Forecasting Across Multiple Principals",
+    "slug": "demand-forecasting-across-multiple-principals"
+  },
+  {
+    "short": "Scheme & Incentive Recon",
+    "full": "Scheme & Incentive Reconciliation Across Principals",
+    "slug": "scheme-incentive-reconciliation-across-principals"
+  },
+  {
+    "short": "Working Capital Forecast",
+    "full": "Working Capital & Cash Flow Forecasting",
+    "slug": "working-capital-cash-flow-forecasting"
+  },
+  {
+    "short": "Predictive Fleet Maintenance",
+    "full": "Predictive Vehicle Maintenance & Breakdown Prevention",
+    "slug": "predictive-vehicle-maintenance-breakdown-prevention"
+  },
+  {
+    "short": "Route & Load Optimization",
+    "full": "AI Route & Load Optimization Engine",
+    "slug": "ai-route-load-optimization-engine"
+  },
+  {
+    "short": "Empty-Mile Optimization",
+    "full": "Empty-Mile & Backhaul Optimization",
+    "slug": "empty-mile-backhaul-optimization"
+  },
+  {
+    "short": "E-Way Bill & Documentation",
+    "full": "Automated E-Way Bill, LR & Customs Documentation Generator",
+    "slug": "automated-e-way-bill-lr-customs-documentation-generator"
+  },
+  {
+    "short": "Export Documentation Auto",
+    "full": "AI Export Documentation Automation System",
+    "slug": "ai-export-documentation-automation-system"
+  },
+  {
+    "short": "LC Compliance Monitoring",
+    "full": "AI Letter of Credit Compliance Monitoring System",
+    "slug": "ai-letter-of-credit-compliance-monitoring-system"
+  },
+  {
+    "short": "Export Incentive Optimizer",
+    "full": "Export Incentive & Scheme Optimization System",
+    "slug": "export-incentive-scheme-optimization-system"
+  },
+  {
+    "short": "International Buyer Intel",
+    "full": "International Buyer Intelligence & Relationship System",
+    "slug": "international-buyer-intelligence-relationship-system"
+  },
+  {
+    "short": "Freight & Shipping Optimizer",
+    "full": "AI Freight & Shipping Optimization System",
+    "slug": "ai-freight-shipping-optimization-system"
+  },
+  {
+    "short": "Food Production Scheduling",
+    "full": "AI Production Planning & Batch Scheduling System",
+    "slug": "ai-production-planning-batch-scheduling-system"
+  },
+  {
+    "short": "FSSAI Compliance System",
+    "full": "FSSAI Compliance & Food Safety Management System",
+    "slug": "fssai-compliance-food-safety-management-system"
+  },
+  {
+    "short": "Agri RM Procurement Intel",
+    "full": "Agricultural Raw Material Procurement Intelligence System",
+    "slug": "agricultural-raw-material-procurement-intelligence-system"
+  },
+  {
+    "short": "Distributor & Secondary Sales",
+    "full": "Distributor Management & Secondary Sales Intelligence System",
+    "slug": "distributor-management-secondary-sales-intelligence-system"
+  },
+  {
+    "short": "Product Costing & Margin",
+    "full": "Product Costing & Profitability Intelligence",
+    "slug": "product-costing-profitability-intelligence"
+  },
+  {
+    "short": "Food Processor Dashboard",
+    "full": "Food Processor Owner's Intelligence Dashboard",
+    "slug": "food-processor-owners-intelligence-dashboard"
+  },
+  {
+    "short": "Batch Yield Optimization",
+    "full": "Batch Process Yield & Deviation Optimization",
+    "slug": "batch-process-yield-deviation-optimization"
+  },
+  {
+    "short": "Chemical Energy Optimization",
+    "full": "Energy & Utility Consumption Optimization",
+    "slug": "energy-utility-consumption-optimization"
+  },
+  {
+    "short": "Chemical QC & COA Generation",
+    "full": "AI-Assisted Quality Testing & COA Generation",
+    "slug": "ai-assisted-quality-testing-coa-generation"
+  },
+  {
+    "short": "Feedstock Procurement Intel",
+    "full": "Raw Material & Feedstock Procurement Intelligence",
+    "slug": "raw-material-feedstock-procurement-intelligence"
+  },
+  {
+    "short": "Predictive Safety Alert",
+    "full": "Predictive Safety Incident & Gas Detection Alert",
+    "slug": "predictive-safety-incident-gas-detection-alert"
+  },
+  {
+    "short": "GPCB Compliance Reporting",
+    "full": "Automated GPCB/CPCB Compliance Reporting",
+    "slug": "automated-gpcbcpcb-compliance-reporting"
+  },
+  {
+    "short": "Hazmat Transport Documentation",
+    "full": "Hazmat Dispatch & Transport Documentation Automation",
+    "slug": "hazmat-dispatch-transport-documentation-automation"
+  },
+  {
+    "short": "Reactor & Equipment Maintenance",
+    "full": "Predictive Equipment & Reactor Maintenance",
+    "slug": "predictive-equipment-reactor-maintenance"
+  },
+  {
+    "short": "Order-to-COA Compliance",
+    "full": "Order-to-COA Customer Compliance Matching",
+    "slug": "order-to-coa-customer-compliance-matching"
+  },
+  {
+    "short": "Chemical Ops Dashboard",
+    "full": "Integrated Operations Management Dashboard",
+    "slug": "integrated-operations-management-dashboard"
+  },
+  {
+    "short": "Machine OEE Tracking",
+    "full": "Machine Utilization & OEE Tracking",
+    "slug": "machine-utilization-oee-tracking"
+  },
+  {
+    "short": "Job Sequencing Optimizer",
+    "full": "Production Scheduling & Job Sequencing Optimization",
+    "slug": "production-scheduling-job-sequencing-optimization"
+  },
+  {
+    "short": "Visual Defect Detection",
+    "full": "AI Visual Defect Detection for Castings/Machined Parts",
+    "slug": "ai-visual-defect-detection-for-castingsmachined-parts"
+  },
+  {
+    "short": "RFQ-to-Quote Automation",
+    "full": "AI-Assisted RFQ-to-Quote Costing Automation",
+    "slug": "ai-assisted-rfq-to-quote-costing-automation"
+  },
+  {
+    "short": "Job Costing & Profitability",
+    "full": "Job Costing & Profitability by Customer/Order",
+    "slug": "job-costing-profitability-by-customerorder"
+  },
+  {
+    "short": "Subcontractor Scorecard",
+    "full": "Vendor/Job-Work Subcontractor Performance Scorecard",
+    "slug": "vendorjob-work-subcontractor-performance-scorecard"
+  },
+  {
+    "short": "CNC Predictive Maintenance",
+    "full": "Predictive Maintenance for CNC/Production Machinery",
+    "slug": "predictive-maintenance-for-cncproduction-machinery"
+  },
+  {
+    "short": "Order Delivery Commitment",
+    "full": "Order Tracking & Customer Delivery Commitment Management",
+    "slug": "order-tracking-customer-delivery-commitment-management"
+  },
+  {
+    "short": "PPAP & Audit Compliance",
+    "full": "ISO/Customer Audit & PPAP Compliance Tracker",
+    "slug": "isocustomer-audit-ppap-compliance-tracker"
+  },
+  {
+    "short": "Shop Floor Dashboard",
+    "full": "Shop Floor Performance & Management Dashboard",
+    "slug": "shop-floor-performance-management-dashboard"
+  },
+  {
+    "short": "Quotation & Margin Intel",
+    "full": "AI Quotation Generation & Margin Intelligence System",
+    "slug": "ai-quotation-generation-margin-intelligence-system"
+  },
+  {
+    "short": "Price List Intelligence",
+    "full": "Distributor & Dealer Price List Intelligence System",
+    "slug": "distributor-dealer-price-list-intelligence-system"
+  },
+  {
+    "short": "Sales Follow-Up Tracker",
+    "full": "AI Sales Opportunity & Follow-Up Tracker",
+    "slug": "ai-sales-opportunity-follow-up-tracker"
+  },
+  {
+    "short": "Vendor Price Benchmarking",
+    "full": "AI Vendor Price Benchmarking & Purchase Intelligence System",
+    "slug": "ai-vendor-price-benchmarking-purchase-intelligence-system"
+  },
+  {
+    "short": "Reorder & Stock Optimizer",
+    "full": "Reorder Intelligence & Stock Optimization System",
+    "slug": "reorder-intelligence-stock-optimization-system"
+  },
+  {
+    "short": "PO & Documentation Auto",
+    "full": "AI Purchase Order & Documentation Automation System",
+    "slug": "ai-purchase-order-documentation-automation-system"
+  },
+  {
+    "short": "Outstanding Collections Intel",
+    "full": "AI Outstanding Payment & Collections Intelligence System",
+    "slug": "ai-outstanding-payment-collections-intelligence-system"
+  },
+  {
+    "short": "Trader Owner Dashboard",
+    "full": "Owner's Daily Business Intelligence Dashboard",
+    "slug": "owners-daily-business-intelligence-dashboard"
+  },
+  {
+    "short": "Packaging Job Scheduler",
+    "full": "AI Production Planning & Job Scheduling System",
+    "slug": "ai-production-planning-job-scheduling-system"
+  },
+  {
+    "short": "Ink & Material Optimization",
+    "full": "Ink & Raw Material Consumption Optimization System",
+    "slug": "ink-raw-material-consumption-optimization-system"
+  },
+  {
+    "short": "Print Quality Inspection",
+    "full": "Quality Inspection & Defect Detection System",
+    "slug": "quality-inspection-defect-detection-system"
+  },
+  {
+    "short": "Artwork & Order Management",
+    "full": "AI Customer Order & Artwork Management System",
+    "slug": "ai-customer-order-artwork-management-system"
+  },
+  {
+    "short": "Packaging Cost Estimator",
+    "full": "Packaging Cost Estimation & Quotation System",
+    "slug": "packaging-cost-estimation-quotation-system"
+  },
+  {
+    "short": "Press Maintenance Prediction",
+    "full": "Machine Maintenance & Downtime Prediction",
+    "slug": "machine-maintenance-downtime-prediction"
+  },
+  {
+    "short": "Packaging Collections Intel",
+    "full": "Outstanding Collections & Customer Credit Intelligence",
+    "slug": "outstanding-collections-customer-credit-intelligence"
+  },
+  {
+    "short": "Sales Follow-Up System",
+    "full": "AI Sales Follow-Up & Lead Tracking System",
+    "slug": "ai-sales-follow-up-lead-tracking-system"
+  },
+  {
+    "short": "Outstanding Collections",
+    "full": "AI Outstanding Collections & Follow-Up System",
+    "slug": "ai-outstanding-collections-follow-up-system"
+  },
+  {
+    "short": "Raw Material Reorder",
+    "full": "Raw Material Reorder & Inventory Intelligence",
+    "slug": "raw-material-reorder-inventory-intelligence"
+  },
+  {
+    "short": "Owner's Business Dashboard",
+    "full": "Owner's Daily Business Intelligence Dashboard",
+    "slug": "owners-daily-business-intelligence-dashboard"
+  },
+  {
+    "short": "Demand Forecasting",
+    "full": "AI Demand Forecasting & Seasonal Planning System",
+    "slug": "ai-demand-forecasting-seasonal-planning-system"
+  },
+  {
+    "short": "Production Planning",
+    "full": "AI Production Planning & Schedule Optimization",
+    "slug": "ai-production-planning-schedule-optimization"
+  }
+]

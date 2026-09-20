@@ -1,0 +1,332 @@
+{
+  "description": "MAD t Centralized Media Asset Feeder Manifest",
+  "instructions": "Use python fetch_hostinger.py fetch <folder_name> to automatically copy required assets from 00_Shared_Media_Pool into this build before deployment or local testing.",
+  "total_assets": 65,
+  "assets": [
+    {
+      "path": "dist/media/hero-poster-mobile.jpg",
+      "pool_asset": "hero-poster-mobile.jpg",
+      "size_mb": 2.82
+    },
+    {
+      "path": "dist/media/hero-poster.jpg",
+      "pool_asset": "hero-poster.jpg",
+      "size_mb": 2.79
+    },
+    {
+      "path": "dist/media/painting-01-desktop.mp4",
+      "pool_asset": "painting-01-desktop.mp4",
+      "size_mb": 26.55
+    },
+    {
+      "path": "dist/media/painting-01-mobile.mp4",
+      "pool_asset": "painting-01-mobile.mp4",
+      "size_mb": 4.28
+    },
+    {
+      "path": "dist/media/painting-01-still.jpg",
+      "pool_asset": "painting-01-still.jpg",
+      "size_mb": 3.38
+    },
+    {
+      "path": "dist/media/painting-01.mp4",
+      "pool_asset": "painting-01.mp4",
+      "size_mb": 27.92
+    },
+    {
+      "path": "dist/media/painting-02 f.mp4",
+      "pool_asset": "painting-02 f.mp4",
+      "size_mb": 4.26
+    },
+    {
+      "path": "dist/media/painting-02-desktop.mp4",
+      "pool_asset": "painting-02-desktop.mp4",
+      "size_mb": 5.49
+    },
+    {
+      "path": "dist/media/painting-02-mobile.mp4",
+      "pool_asset": "painting-02-mobile.mp4",
+      "size_mb": 3.66
+    },
+    {
+      "path": "dist/media/painting-02-still.jpg",
+      "pool_asset": "painting-02-still.jpg",
+      "size_mb": 2.88
+    },
+    {
+      "path": "dist/media/painting-02.mp4",
+      "pool_asset": "painting-02.mp4",
+      "size_mb": 5.74
+    },
+    {
+      "path": "dist/media/painting-03-mobile.mp4",
+      "pool_asset": "painting-03-mobile.mp4",
+      "size_mb": 5.24
+    },
+    {
+      "path": "dist/media/painting-03-still.jpg",
+      "pool_asset": "painting-03-still.jpg",
+      "size_mb": 2.99
+    },
+    {
+      "path": "dist/media/painting-03.mp4",
+      "pool_asset": "painting-03.mp4",
+      "size_mb": 5.24
+    },
+    {
+      "path": "dist/media/painting-04-mobile.mp4",
+      "pool_asset": "painting-04-mobile.mp4",
+      "size_mb": 7.32
+    },
+    {
+      "path": "dist/media/painting-04-still.jpg",
+      "pool_asset": "painting-04-still.jpg",
+      "size_mb": 3.64
+    },
+    {
+      "path": "dist/media/painting-04.mp4",
+      "pool_asset": "painting-04.mp4",
+      "size_mb": 7.32
+    },
+    {
+      "path": "dist/media/painting-05-desktop.mp4",
+      "pool_asset": "painting-05-desktop.mp4",
+      "size_mb": 17.78
+    },
+    {
+      "path": "dist/media/painting-05-mobile.mp4",
+      "pool_asset": "painting-05-mobile.mp4",
+      "size_mb": 7.94
+    },
+    {
+      "path": "dist/media/painting-05-still.jpg",
+      "pool_asset": "painting-05-still.jpg",
+      "size_mb": 3.0
+    },
+    {
+      "path": "dist/media/painting-05.mp4",
+      "pool_asset": "painting-05.mp4",
+      "size_mb": 4.46
+    },
+    {
+      "path": "dist/media/pledge-01.jpg",
+      "pool_asset": "pledge-01.jpg",
+      "size_mb": 1.68
+    },
+    {
+      "path": "dist/media/pledge-02.jpg",
+      "pool_asset": "pledge-02.jpg",
+      "size_mb": 2.84
+    },
+    {
+      "path": "dist/media/pledge-03.jpg",
+      "pool_asset": "pledge-03.jpg",
+      "size_mb": 1.74
+    },
+    {
+      "path": "dist/media/previews/ruchika-jain.jpg",
+      "pool_asset": "ruchika-jain.jpg",
+      "size_mb": 0.8
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/hero-poster-mobile.jpg",
+      "pool_asset": "hero-poster-mobile.jpg",
+      "size_mb": 2.82
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/hero-poster.jpg",
+      "pool_asset": "hero-poster.jpg",
+      "size_mb": 2.79
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-01-still.jpg",
+      "pool_asset": "painting-01-still.jpg",
+      "size_mb": 3.38
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-01.mp4",
+      "pool_asset": "painting-01_6016291.mp4",
+      "size_mb": 5.74
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-02-still.jpg",
+      "pool_asset": "painting-02-still.jpg",
+      "size_mb": 2.88
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-02.mp4",
+      "pool_asset": "painting-02_4468894.mp4",
+      "size_mb": 4.26
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-03-still.jpg",
+      "pool_asset": "painting-03-still.jpg",
+      "size_mb": 2.99
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-03.mp4",
+      "pool_asset": "painting-03_5654355.mp4",
+      "size_mb": 5.39
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-04-still.jpg",
+      "pool_asset": "painting-04-still.jpg",
+      "size_mb": 3.64
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-04.mp4",
+      "pool_asset": "painting-04_7883107.mp4",
+      "size_mb": 7.52
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-05-still.jpg",
+      "pool_asset": "painting-05-still.jpg",
+      "size_mb": 3.0
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/painting-05.mp4",
+      "pool_asset": "painting-05_2634585.mp4",
+      "size_mb": 2.51
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/pledge-01.jpg",
+      "pool_asset": "pledge-01.jpg",
+      "size_mb": 1.68
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/pledge-02.jpg",
+      "pool_asset": "pledge-02.jpg",
+      "size_mb": 2.84
+    },
+    {
+      "path": "Mad Images and videos/Mad Images and videos/pledge-03.jpg",
+      "pool_asset": "pledge-03.jpg",
+      "size_mb": 1.74
+    },
+    {
+      "path": "public/media/hero-poster-mobile.jpg",
+      "pool_asset": "hero-poster-mobile.jpg",
+      "size_mb": 2.82
+    },
+    {
+      "path": "public/media/hero-poster.jpg",
+      "pool_asset": "hero-poster.jpg",
+      "size_mb": 2.79
+    },
+    {
+      "path": "public/media/painting-01-desktop.mp4",
+      "pool_asset": "painting-01-desktop.mp4",
+      "size_mb": 26.55
+    },
+    {
+      "path": "public/media/painting-01-mobile.mp4",
+      "pool_asset": "painting-01-mobile.mp4",
+      "size_mb": 4.28
+    },
+    {
+      "path": "public/media/painting-01-still.jpg",
+      "pool_asset": "painting-01-still.jpg",
+      "size_mb": 3.38
+    },
+    {
+      "path": "public/media/painting-01.mp4",
+      "pool_asset": "painting-01.mp4",
+      "size_mb": 27.92
+    },
+    {
+      "path": "public/media/painting-02 f.mp4",
+      "pool_asset": "painting-02 f.mp4",
+      "size_mb": 4.26
+    },
+    {
+      "path": "public/media/painting-02-desktop.mp4",
+      "pool_asset": "painting-02-desktop.mp4",
+      "size_mb": 5.49
+    },
+    {
+      "path": "public/media/painting-02-mobile.mp4",
+      "pool_asset": "painting-02-mobile.mp4",
+      "size_mb": 3.66
+    },
+    {
+      "path": "public/media/painting-02-still.jpg",
+      "pool_asset": "painting-02-still.jpg",
+      "size_mb": 2.88
+    },
+    {
+      "path": "public/media/painting-02.mp4",
+      "pool_asset": "painting-02.mp4",
+      "size_mb": 5.74
+    },
+    {
+      "path": "public/media/painting-03-mobile.mp4",
+      "pool_asset": "painting-03-mobile.mp4",
+      "size_mb": 5.24
+    },
+    {
+      "path": "public/media/painting-03-still.jpg",
+      "pool_asset": "painting-03-still.jpg",
+      "size_mb": 2.99
+    },
+    {
+      "path": "public/media/painting-03.mp4",
+      "pool_asset": "painting-03.mp4",
+      "size_mb": 5.24
+    },
+    {
+      "path": "public/media/painting-04-mobile.mp4",
+      "pool_asset": "painting-04-mobile.mp4",
+      "size_mb": 7.32
+    },
+    {
+      "path": "public/media/painting-04-still.jpg",
+      "pool_asset": "painting-04-still.jpg",
+      "size_mb": 3.64
+    },
+    {
+      "path": "public/media/painting-04.mp4",
+      "pool_asset": "painting-04.mp4",
+      "size_mb": 7.32
+    },
+    {
+      "path": "public/media/painting-05-desktop.mp4",
+      "pool_asset": "painting-05-desktop.mp4",
+      "size_mb": 17.78
+    },
+    {
+      "path": "public/media/painting-05-mobile.mp4",
+      "pool_asset": "painting-05-mobile.mp4",
+      "size_mb": 7.94
+    },
+    {
+      "path": "public/media/painting-05-still.jpg",
+      "pool_asset": "painting-05-still.jpg",
+      "size_mb": 3.0
+    },
+    {
+      "path": "public/media/painting-05.mp4",
+      "pool_asset": "painting-05.mp4",
+      "size_mb": 4.46
+    },
+    {
+      "path": "public/media/pledge-01.jpg",
+      "pool_asset": "pledge-01.jpg",
+      "size_mb": 1.68
+    },
+    {
+      "path": "public/media/pledge-02.jpg",
+      "pool_asset": "pledge-02.jpg",
+      "size_mb": 2.84
+    },
+    {
+      "path": "public/media/pledge-03.jpg",
+      "pool_asset": "pledge-03.jpg",
+      "size_mb": 1.74
+    },
+    {
+      "path": "public/media/previews/ruchika-jain.jpg",
+      "pool_asset": "ruchika-jain.jpg",
+      "size_mb": 0.8
+    }
+  ]
+}

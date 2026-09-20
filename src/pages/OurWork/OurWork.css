@@ -1,0 +1,41 @@
+/* OurWork — page-level layout only.
+   Component-level styling lives inside each component's own CSS file.
+   Do not duplicate tokens from EditorialHeader, TestimonySection,
+   MethodSection, or PledgeSection here. */
+
+.our-work-main {
+  min-height: 100vh;
+  /* Gallery background on main prevents --void body from bleeding through
+     on first paint before the light-zone child renders. This is belt-and-
+     suspenders alongside the inline style set in OurWork.tsx. */
+  background: var(--gallery, #faf9f7);
+}
+
+/* ACT 1 — warm off-white editorial zone */
+.our-work-light-zone {
+  background: var(--gallery, #faf9f7);
+  position: relative;
+  padding-top: var(--nav-height, 64px);
+  padding-bottom: 80px;
+}
+
+/* Eclipse container handles the light→dark gradient transition.
+   ScrollSentence occupies 700vh inside here; the gradient fires
+   during that scroll distance before .dark-zone appears.
+   Explicit starting background prevents dark body bleedthrough
+   before the JS scroll listener paints its first frame. */
+.eclipse-container {
+  position: relative;
+  background: var(--gallery, #faf9f7);
+}
+
+/* ACT 2 — operational dark zone */
+.our-work-dark-zone {
+  background: var(--canvas, #0a0a0f);
+}
+
+@media (max-width: 768px) {
+  .our-work-light-zone {
+    padding-bottom: 48px;
+  }
+}
