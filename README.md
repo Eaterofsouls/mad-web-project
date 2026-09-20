@@ -34,7 +34,7 @@ MAD is a specialized Client Acquisition & Business Growth AI Operating System en
 ## Project Structure
 
 ```text
-mad-operating-system/
+mad-web-project/
 ├── docs/                             # Core technical blueprints and architecture specs
 │   ├── MASTER_PROJECT_DOCUMENT.md
 │   ├── MASTER_DESIGN_STRATEGY_DOCUMENT.md
@@ -71,8 +71,8 @@ mad-operating-system/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Eaterofsouls/mad-operating-system.git
-cd mad-operating-system
+git clone https://github.com/Eaterofsouls/mad-web-project.git
+cd mad-web-project
 
 # Install dependencies
 npm install
