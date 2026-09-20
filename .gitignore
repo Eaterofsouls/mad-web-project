@@ -37,4 +37,3 @@ lerna-debug.log*
 # Media & Large Binaries
 *.zip
 *.tar.gz
-*.mp4
