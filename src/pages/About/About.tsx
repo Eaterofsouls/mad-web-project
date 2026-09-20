@@ -22,7 +22,7 @@ const team = [
     bio: 'Darpan leads the design of every client-facing solution MAD produces. With deep expertise across branding, UI/UX, and digital experience, he translates complex AI capabilities into interfaces that feel natural, inevitable, and elegant. He works with Adobe Creative Suite, CorelDRAW, and AI-powered visual tools — but his sharpest instrument is his instinct for what the user actually needs.',
     bgVar: 'var(--canvas)',
     glyph: 'design',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/darpan-shakuni-9bb580132/',
   },
   {
     index: '03',
@@ -32,7 +32,7 @@ const team = [
     bio: 'Urvi makes brands stop being forgettable. With a postgraduate degree in Social Entrepreneurship from the Entrepreneurship Development Institute of India, she ensures that MAD\'s solutions communicate their identity with precision. Bringing extensive experience from heading sales marketing to independent brand consulting, she makes sure that the systems we build don\'t just work flawlessly — they sound unique, stand out, and create an impact.',
     bgVar: 'var(--void)',
     glyph: 'brand',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/brandingspecialist101/',
   },
   {
     index: '04',
@@ -52,7 +52,7 @@ const team = [
     bio: 'Mihir brings top-notch security to every system MAD deploys — ensuring what we build is fortified, auditable, and resilient. A Certified Ethical Hacker pursuing his MSc in Applied Cyber Security at Queen\'s University Belfast, he bridges the gap between robust software engineering and elite security practices. He doesn\'t just protect the perimeter — he architects systems where security is intrinsic, not bolted on.',
     bgVar: 'var(--void)',
     glyph: 'security',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/mihir-brijesh-solanki-1a7a4a228/',
   },
   {
     index: '06',
@@ -62,7 +62,7 @@ const team = [
     bio: 'Yash ensures that every system MAD delivers is robust and reliable. As a QA Analyst with a sharp eye for detail, he brings rigorous manual testing and quality assurance practices to the team. Drawing on his experience at Emerging Five, Yash thoroughly tests our solutions to identify and eliminate edge cases, guaranteeing that the final product not only meets requirements but exceeds expectations in stability.',
     bgVar: 'var(--canvas)',
     glyph: 'qa',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/parmar-yash-709a74382/',
   },
 ];
 
@@ -409,17 +409,7 @@ function TeamChapter({ member, isReversed }: ChapterProps) {
             >
               <LinkedInGlyph />
             </a>
-          ) : (
-            <a
-              href="#0"
-              className="about-chapter__linkedin about-chapter__linkedin--pending"
-              aria-label={`${member.name}'s LinkedIn Profile (Coming soon)`}
-              title={`${member.name} — LinkedIn profile coming soon`}
-              onClick={(e) => e.preventDefault()}
-            >
-              <LinkedInGlyph />
-            </a>
-          )}
+          ) : null}
         </div>
         <p className="about-chapter__role">{member.role}</p>
         <div className="about-chapter__rule" />
