@@ -6,12 +6,12 @@ import './About.css';
 const team = [
   {
     index: '01',
-    name: 'Urvi Shah',
-    role: 'Lead Brand Architect',
-    discipline: 'BRAND STRATEGY · MARKETING · COMMUNICATIONS',
-    bio: 'Urvi makes brands stop being forgettable. With a postgraduate degree in Social Entrepreneurship from the Entrepreneurship Development Institute of India, she ensures that MAD\'s solutions communicate their identity with precision. Bringing extensive experience from heading sales marketing to independent brand consulting, she makes sure that the systems we build don\'t just work flawlessly — they sound unique, stand out, and create an impact.',
+    name: 'Daksh Chauhan',
+    role: 'AI Development Lead',
+    discipline: 'ARTIFICIAL INTELLIGENCE · SYSTEMS THINKING · ARCHITECTURE',
+    bio: 'Daksh brings strong systems thinking and creativity to the AI systems MAD develops. Pursuing his B.Tech in Computer Science (AI-ML) from Adani University, he designs intelligent, scalable architectures that sit at the intersection of precision engineering and lateral thinking. For Daksh, every system is a question: what is the most intelligent thing this could do?',
     bgVar: 'var(--void)',
-    glyph: 'brand',
+    glyph: 'ai',
   },
   {
     index: '02',
@@ -24,12 +24,12 @@ const team = [
   },
   {
     index: '03',
-    name: 'Daksh Chauhan',
-    role: 'AI Development Lead',
-    discipline: 'ARTIFICIAL INTELLIGENCE · SYSTEMS THINKING · ARCHITECTURE',
-    bio: 'Daksh brings strong systems thinking and creativity to the AI systems MAD develops. Pursuing his B.Tech in Computer Science (AI-ML) from Adani University, he designs intelligent, scalable architectures that sit at the intersection of precision engineering and lateral thinking. For Daksh, every system is a question: what is the most intelligent thing this could do?',
+    name: 'Urvi Shah',
+    role: 'Lead Brand Architect',
+    discipline: 'BRAND STRATEGY · MARKETING · COMMUNICATIONS',
+    bio: 'Urvi makes brands stop being forgettable. With a postgraduate degree in Social Entrepreneurship from the Entrepreneurship Development Institute of India, she ensures that MAD\'s solutions communicate their identity with precision. Bringing extensive experience from heading sales marketing to independent brand consulting, she makes sure that the systems we build don\'t just work flawlessly — they sound unique, stand out, and create an impact.',
     bgVar: 'var(--void)',
-    glyph: 'ai',
+    glyph: 'brand',
   },
   {
     index: '04',
